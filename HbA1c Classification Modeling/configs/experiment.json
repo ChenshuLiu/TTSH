@@ -1,0 +1,50 @@
+{
+  "architectures": [
+    "knn",
+    "1d_cnn",
+    "tcn",
+    "bigru",
+    "transformer"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "input_modality": "CGM only",
+  "sample_unit": "event",
+  "k": 1,
+  "pooling": "mean",
+  "length": 64,
+  "metadata_features": [],
+  "event_features": [],
+  "public_datasets": [
+    "Hall2018",
+    "CGMacros",
+    "BIG IDEAS"
+  ],
+  "labeled_public_patients": 116,
+  "public_events": 7092,
+  "train_options": {
+    "val_fraction": 0.25,
+    "epochs": 200,
+    "batch_size": 16,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "patience": 10,
+    "hidden_dim": 32,
+    "dropout": 0.1,
+    "class_weights": true,
+    "device": "cpu"
+  },
+  "knn_options": {
+    "n_neighbors": 5,
+    "weights": "distance",
+    "metric": "euclidean"
+  },
+  "private_finetuning": false,
+  "segment_config_file": "configs/segment_config.json",
+  "repeats_note": "Different patient-level splits and neural initialization/shuffle per seed; same split across architectures within each seed."
+}

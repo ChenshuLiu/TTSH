@@ -1,0 +1,26 @@
+{
+  "raw/train": {
+    "subject_id": "Globally namespaced patient ID; repeated at every CGM timepoint",
+    "Timestamp": "Original observed local wall-clock time, sorted, no resampling",
+    "CGM": "CGM in mmol/L",
+    "CGM_unit": "Always mmol/L",
+    "label": "HbA1c-derived patient class, identical to labels CSV",
+    "hba1c": "Patient HbA1c using project percent convention; an outcome, not a covariate",
+    "dataset": "BIG_IDEAS",
+    "glucose_original_mgdl": "Source numeric glucose before conversion",
+    "sensor_code": "Source nonnumeric glucose token, blank when numeric",
+    "source_dataset": "BIG_IDEAS",
+    "source_file": "Member path inside original source archive",
+    "source_row": "Physical CSV line including header line 1",
+    "event_type": "EGV",
+    "source_device_id": "Original source device label",
+    "source_timestamp": "Original timestamp text",
+    "raw_glucose_value": "Original glucose field text"
+  },
+  "clinical_metadata": {
+    "gender": "Source FEMALE/MALE, not currently a v1.2.0 model feature",
+    "age,bmi,height_cm,weight_kg": "Absent in source; blank, not zero or inferred",
+    "source_dob_text_unverified": "Device birth-date text, retained for audit only, not verified clinical DOB"
+  },
+  "raw_train_folder": "Storage convention only; does not constitute an assigned training split"
+}

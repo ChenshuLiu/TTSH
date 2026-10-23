@@ -1,0 +1,17 @@
+﻿subject_id,source_subject_id,dataset,gender,age,bmi,height_cm,weight_kg,hba1c,hba1c_unit,hba1c_measurement_date,gender_source,age_source,bmi_source,source_dob_text_unverified,dob_verification,source_file,demographics_source_file
+BIGIDEAS_001,001,BIG_IDEAS,FEMALE,,,,,5.5,%,,Demographics.csv:Gender,not_provided,not_provided,1990-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_001.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_002,002,BIG_IDEAS,MALE,,,,,5.6,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_002.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_003,003,BIG_IDEAS,FEMALE,,,,,5.9,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_003.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_004,004,BIG_IDEAS,FEMALE,,,,,6.4,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_004.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_005,005,BIG_IDEAS,FEMALE,,,,,5.7,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_005.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_006,006,BIG_IDEAS,FEMALE,,,,,5.8,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_006.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_007,007,BIG_IDEAS,FEMALE,,,,,5.3,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_007.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_008,008,BIG_IDEAS,FEMALE,,,,,5.6,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_008.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_009,009,BIG_IDEAS,MALE,,,,,6.1,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_009.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_010,010,BIG_IDEAS,FEMALE,,,,,6,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_010.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_011,011,BIG_IDEAS,MALE,,,,,6,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_011.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_012,012,BIG_IDEAS,MALE,,,,,5.6,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_012.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_013,013,BIG_IDEAS,MALE,,,,,5.7,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_013.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_014,014,BIG_IDEAS,MALE,,,,,5.5,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_014.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_015,015,BIG_IDEAS,FEMALE,,,,,5.5,%,,Demographics.csv:Gender,not_provided,not_provided,1/1/1970,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_015.csv,BIG IDEAS/Demographics.csv
+BIGIDEAS_016,016,BIG_IDEAS,MALE,,,,,5.5,%,,Demographics.csv:Gender,not_provided,not_provided,1970-01-01,not_verified_not_used_to_derive_age,BIG IDEAS/Dexcom_016.csv,BIG IDEAS/Demographics.csv

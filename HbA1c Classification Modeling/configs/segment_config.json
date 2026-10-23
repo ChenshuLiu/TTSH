@@ -1,0 +1,16 @@
+{
+  "kind": "trough_peak_trough",
+  "length": 64,
+  "min_points": 5,
+  "min_duration_minutes": 20.0,
+  "max_duration_minutes": 360.0,
+  "max_gap_minutes": 25.0,
+  "prominence": 0.5,
+  "smooth_minutes": 15.0,
+  "min_amplitude": 0.4,
+  "max_missing_fraction": 0.2,
+  "min_peak_distance_minutes": 30.0,
+  "max_trough_search_minutes": 180.0,
+  "min_glucose": 1.0,
+  "max_glucose": 40.0
+}

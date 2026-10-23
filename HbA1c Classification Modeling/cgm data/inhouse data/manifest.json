@@ -1,0 +1,181 @@
+{
+  "created_at": "2026-09-29T12:46:50.575076",
+  "counts": {
+    "subjects": 12,
+    "events": 44,
+    "timeseries_points": 1038,
+    "train_points": 298,
+    "held_out_points": 740,
+    "subjects_with_hba1c": 11
+  },
+  "prediction_source": "analysis/Manuscript Prep/Figures and Data/Subject-level SEG modeling/data/model_results.json",
+  "source_sha256": {
+    "model_results.json": "23e3878e72f863f72cedfcbc91dd70dac1a31b7da4af122b305c15e02233a170",
+    "alignment_annotations.json": "47f069839a6e09546a9473fbdae153fef23fd3acb3a8435139a239a895047c8e",
+    "peak_pair_features.json": "05f00bb643d673f1cf2a42878a8f00f8999827d47186fd8d7ddd52dd3c99c8c6",
+    "Lab_data.xlsx": "7a6e98a9472f692ed61aa9100b92d297a597d2f1958508b0efd70c57010ff76b"
+  },
+  "model": "SEG-only warped minmax; matched fitting; training-only feature standardization; ridge alpha 1e-6",
+  "smoothing_ratio": 0.04,
+  "split": "Earliest event per subject for calibration, later non-overlapping events held out",
+  "missing_metadata_subjects": [
+    "H01"
+  ],
+  "missing_hba1c_subjects": [
+    "H01"
+  ],
+  "excluded_from_prediction_source": [
+    {
+      "subject_id": "P06",
+      "event_id": "",
+      "error": "Only one labeled event; no independent later validation event"
+    },
+    {
+      "subject_id": "P11",
+      "event_id": "",
+      "error": "Only one labeled event; no independent later validation event"
+    },
+    {
+      "subject_id": "P17",
+      "event_id": "",
+      "error": "Only one labeled event; no independent later validation event"
+    },
+    {
+      "subject_id": "P03",
+      "event_id": "",
+      "error": "Only 8 calibration points; need at least 12. Earliest event was not skipped."
+    },
+    {
+      "subject_id": "P08",
+      "event_id": "",
+      "error": "Only 8 calibration points; need at least 12. Earliest event was not skipped."
+    }
+  ],
+  "source_model_coefficients": {
+    "H01": {
+      "baseline": 5.382424641500301,
+      "seg_norm": 8.656201971424915,
+      "seg_norm_squared": -16.88830655910425,
+      "seg_norm_cubed": 11.528095046840567,
+      "diffusion_flux_term": 4.932077207818994,
+      "signed_sigmoid_phase_term": 0.5446281609486618
+    },
+    "P01": {
+      "baseline": 9.262311954672324,
+      "seg_norm": 8.030517919158779,
+      "seg_norm_squared": -15.745984179075725,
+      "seg_norm_cubed": 9.201876220829673,
+      "diffusion_flux_term": 0.252329551771446,
+      "signed_sigmoid_phase_term": 1.3868390205264234
+    },
+    "P02": {
+      "baseline": 7.354574633078893,
+      "seg_norm": -4.576168191994868,
+      "seg_norm_squared": 17.805078097923268,
+      "seg_norm_cubed": -12.793579514701243,
+      "diffusion_flux_term": -1.0730758820450876,
+      "signed_sigmoid_phase_term": 1.5234828199179313
+    },
+    "P04": {
+      "baseline": 6.3267560627813975,
+      "seg_norm": 2.7783261973646236,
+      "seg_norm_squared": -8.844837152483228,
+      "seg_norm_cubed": 8.46198841021891,
+      "diffusion_flux_term": -1.678327258854684,
+      "signed_sigmoid_phase_term": 0.35653582771667175
+    },
+    "P05": {
+      "baseline": 11.264899476177916,
+      "seg_norm": 2.9134223715112086,
+      "seg_norm_squared": -5.707278881865653,
+      "seg_norm_cubed": 4.146945672797041,
+      "diffusion_flux_term": -0.6473070754787056,
+      "signed_sigmoid_phase_term": 0.23386124483561757
+    },
+    "P07": {
+      "baseline": 5.374243967867329,
+      "seg_norm": -0.868888101839733,
+      "seg_norm_squared": 12.426655275674811,
+      "seg_norm_cubed": -9.323227198462176,
+      "diffusion_flux_term": 9.826774737601,
+      "signed_sigmoid_phase_term": 0.22627173454800528
+    },
+    "P09": {
+      "baseline": 6.553422982222951,
+      "seg_norm": 1.8989789469449838,
+      "seg_norm_squared": -1.7210558690965145,
+      "seg_norm_cubed": 0.574562717681608,
+      "diffusion_flux_term": -2.183430876633967,
+      "signed_sigmoid_phase_term": 0.1507916493550753
+    },
+    "P10": {
+      "baseline": 18.636498302281982,
+      "seg_norm": 6.841167443169448,
+      "seg_norm_squared": -26.351459187766295,
+      "seg_norm_cubed": 20.403824437879614,
+      "diffusion_flux_term": 4.96595713299481,
+      "signed_sigmoid_phase_term": 1.7641340778741066
+    },
+    "P14": {
+      "baseline": 6.542981985486746,
+      "seg_norm": 7.124592599768776,
+      "seg_norm_squared": -17.13020847383951,
+      "seg_norm_cubed": 12.161511898283035,
+      "diffusion_flux_term": -0.022391116275991895,
+      "signed_sigmoid_phase_term": 0.8534596981802365
+    },
+    "P16": {
+      "baseline": 7.0631809955967295,
+      "seg_norm": -0.08096759405808375,
+      "seg_norm_squared": 13.048439284055211,
+      "seg_norm_cubed": -11.365215935478004,
+      "diffusion_flux_term": 2.87916397167324,
+      "signed_sigmoid_phase_term": 0.3106399210121894
+    },
+    "P19": {
+      "baseline": 7.7057091922739565,
+      "seg_norm": -1.9732673107755103,
+      "seg_norm_squared": 2.5210777008049283,
+      "seg_norm_cubed": 0.3963676000356288,
+      "diffusion_flux_term": 14.106711473643243,
+      "signed_sigmoid_phase_term": 1.2063289445088134
+    },
+    "P20": {
+      "baseline": 12.855985457184198,
+      "seg_norm": 8.185070765459935,
+      "seg_norm_squared": -13.056462420879155,
+      "seg_norm_cubed": 7.089210824217531,
+      "diffusion_flux_term": 0.081729186307807,
+      "signed_sigmoid_phase_term": 0.6425851509945831
+    }
+  },
+  "omitted_lab_fields": [
+    "intials"
+  ],
+  "unit_notes": {
+    "CGM": "mmol/L",
+    "durations": "seconds unless field explicitly states otherwise",
+    "saved_event_derivatives": "Derivative with respect to interval time normalized to 0..1; preserve source time_normalization and value_source fields",
+    "model_derivative": "Min-max normalized SEG change per native sensor minute, bin-averaged",
+    "timestamps": "Source local wall-clock timestamps (study timezone Asia/Singapore); not Unix milliseconds",
+    "patient_metadata": "Values/categorical codes preserved as recorded; no inferred category labels or unit conversions"
+  },
+  "table_shapes": {
+    "predicted_cgm_timeseries.csv": {
+      "rows": 1038,
+      "columns": 17
+    },
+    "event_features.csv": {
+      "rows": 44,
+      "columns": 230
+    },
+    "patient_metadata.csv": {
+      "rows": 12,
+      "columns": 38
+    },
+    "timeseries_with_features_and_metadata.csv": {
+      "rows": 1038,
+      "columns": 278
+    }
+  }
+}

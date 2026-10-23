@@ -1,0 +1,7 @@
+# Versions used to verify this handoff on Python 3.12.14 / macOS arm64.
+# This is not a historical lockfile captured during the original training run.
+numpy==1.26.4
+pandas==2.3.3
+scipy==1.15.2
+scikit-learn==1.7.2
+torch==2.14.0

@@ -1,0 +1,21 @@
+{
+  "input_root": "/Users/niuziwei/Downloads/CGM/CGMacros",
+  "bio_csv": "/Users/niuziwei/Downloads/CGM/CGMacros/bio.csv",
+  "output_root": "/Users/niuziwei/Downloads/CGMacros_preprocessing_package/CGMacros_studio_ready",
+  "input_glucose_unit": "mg/dL",
+  "output_glucose_unit": "mmol/L",
+  "conversion_formula": "mmol/L = mg/dL / 18.0156",
+  "standard_cgm_source": "dexcom",
+  "hba1c_label_rule": {
+    "Healthy": "HbA1c < 5.7",
+    "Prediabetes": "5.7 <= HbA1c <= 6.4",
+    "T2D": "HbA1c > 6.4"
+  },
+  "subjects_found": 45,
+  "subjects_processed": 45,
+  "class_counts": {
+    "Prediabetes": 16,
+    "Healthy": 15,
+    "T2D": 14
+  }
+}

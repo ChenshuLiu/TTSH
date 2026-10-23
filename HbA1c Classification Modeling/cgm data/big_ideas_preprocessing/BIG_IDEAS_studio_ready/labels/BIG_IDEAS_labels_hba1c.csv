@@ -1,0 +1,17 @@
+﻿subject_id,label,hba1c,diagnosis_original,dataset,label_source,label_rule,hba1c_unit,source_subject_id
+BIGIDEAS_001,Healthy,5.5,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,001
+BIGIDEAS_002,Healthy,5.6,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,002
+BIGIDEAS_003,Prediabetes,5.9,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,003
+BIGIDEAS_004,Prediabetes,6.4,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,004
+BIGIDEAS_005,Prediabetes,5.7,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,005
+BIGIDEAS_006,Prediabetes,5.8,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,006
+BIGIDEAS_007,Healthy,5.3,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,007
+BIGIDEAS_008,Healthy,5.6,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,008
+BIGIDEAS_009,Prediabetes,6.1,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,009
+BIGIDEAS_010,Prediabetes,6,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,010
+BIGIDEAS_011,Prediabetes,6,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,011
+BIGIDEAS_012,Healthy,5.6,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,012
+BIGIDEAS_013,Prediabetes,5.7,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,013
+BIGIDEAS_014,Healthy,5.5,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,014
+BIGIDEAS_015,Healthy,5.5,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,015
+BIGIDEAS_016,Healthy,5.5,,BIG_IDEAS,HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5,%,016

@@ -1,0 +1,8 @@
+{
+  "n_neighbors": 5,
+  "weights": "distance",
+  "metric": "euclidean",
+  "val_fraction": 0.25,
+  "seed": 42,
+  "length": 64
+}

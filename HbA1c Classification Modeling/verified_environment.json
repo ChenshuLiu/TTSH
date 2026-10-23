@@ -1,0 +1,13 @@
+{
+  "python": "3.12.14",
+  "platform": "macOS-15.7.4-arm64-arm-64bit",
+  "machine": "arm64",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.2",
+    "scikit-learn": "1.7.2",
+    "torch": "2.14.0"
+  },
+  "note": "Environment used to verify this handoff, not a recorded original training-environment lockfile."
+}

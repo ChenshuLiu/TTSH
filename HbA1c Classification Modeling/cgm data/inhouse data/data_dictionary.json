@@ -1,0 +1,2262 @@
+{
+  "predicted_cgm_timeseries.csv": {
+    "event_uid": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "subject_id": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "event_id": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "event_name": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "day": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "split": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "cgm_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "elapsed_seconds_from_cgm_event_start": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "interval": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "actual_cgm_mmol_L": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "predicted_cgm_mmol_L": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.intercept": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_normalized": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_normalized_squared": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_normalized_cubed": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_rate_per_minute": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_signed_sigmoid_phase": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    }
+  },
+  "event_features.csv": {
+    "event_uid": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "event_id": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "subject_id": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "day": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "event_name": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "split": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "case_path": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "pair_index": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "seg.aggregate_id": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.pair_context": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.label_panel": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.peak_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough2_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_trough1_to_trough2_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_trough1_to_trough2_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.instance_id": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.instance_timestamp": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.meal_med": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.calories": {
+      "nonmissing_count": 31,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.mode": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.instance_to_peak_seconds": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.has_preceding_instance": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.lookup_status": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.anchor_signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.anchor_peak_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.target_peak_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_trough1_to_peak_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_peak_to_trough2_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.num_preceding_peaks_since_instance": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.num_presceding_peak": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.label_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.matched_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.matched_index": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.time_offset_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.raw_delta_value": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.cgm_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.converted_concentration": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.SEG_converted_concentration_uM": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.SEG_uM_conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.label_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.matched_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.matched_index": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.time_offset_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.raw_delta_value": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.cgm_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.converted_concentration": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.SEG_converted_concentration_uM": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.SEG_uM_conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.label_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.matched_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.matched_index": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.time_offset_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.raw_delta_value": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.cgm_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.converted_concentration": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.SEG_converted_concentration_uM": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.SEG_uM_conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.start_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.method": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.duration_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.raw_delta_auc_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.cgm_auc_seconds": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.converted_concentration_auc_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.SEG_converted_concentration_uM_auc_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.SEG_uM_conversion_formula": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.max_derivative": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.min_derivative": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.average_derivative": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.derivative_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.time_normalized_start": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.time_normalized_end": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.start_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.time_normalization": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.max_derivative": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.min_derivative": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.average_derivative": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.derivative_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.time_normalized_start": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.time_normalized_end": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.start_timestamp": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.time_normalization": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.max_derivative": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.min_derivative": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.average_derivative": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.derivative_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.time_normalized_start": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.time_normalized_end": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.start_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.time_normalization": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.aggregate_id": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.pair_context": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.label_panel": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.peak_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough2_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_trough2_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_trough2_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.instance_id": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.instance_timestamp": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.meal_med": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.calories": {
+      "nonmissing_count": 31,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.mode": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.instance_to_peak_seconds": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.has_preceding_instance": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.lookup_status": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.anchor_signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.anchor_peak_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.target_peak_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_peak_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_peak_to_trough2_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.num_preceding_peaks_since_instance": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.num_presceding_peak": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.label_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.matched_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.matched_index": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.time_offset_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.raw_delta_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.cgm_value": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.label_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.matched_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.matched_index": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.time_offset_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.raw_delta_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.cgm_value": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.label_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.matched_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.matched_index": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.time_offset_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.raw_delta_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.cgm_value": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.start_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.method": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.duration_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.raw_delta_auc_seconds": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.cgm_auc_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.max_derivative": {
+      "nonmissing_count": 42,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.min_derivative": {
+      "nonmissing_count": 42,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.average_derivative": {
+      "nonmissing_count": 42,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.derivative_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.time_normalized_start": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.time_normalized_end": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.start_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.time_normalization": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.max_derivative": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.min_derivative": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.average_derivative": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.derivative_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.time_normalized_start": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.time_normalized_end": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.start_timestamp": {
+      "nonmissing_count": 35,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.time_normalization": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.max_derivative": {
+      "nonmissing_count": 43,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.min_derivative": {
+      "nonmissing_count": 43,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.average_derivative": {
+      "nonmissing_count": 43,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.point_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.derivative_count": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.time_normalized_start": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.time_normalized_end": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.start_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.end_timestamp": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.signal": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.value_source": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.time_normalization": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.name": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.instance_id": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.case_path": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.panel": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.category": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.seg_id": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.cgm_id": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.saved_at_utc": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.cgm_seg_peak_time_difference_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.abs_cgm_seg_peak_time_difference_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.peak_time_difference_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.abs_peak_time_difference_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.delay_seg_minus_cgm_peak_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.delay_abs_seg_cgm_peak_seconds": {
+      "nonmissing_count": 44,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "prediction_metrics.n": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "prediction_metrics.mard_percent": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "prediction_metrics.rmse": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "prediction_metrics.r_squared": {
+      "nonmissing_count": 44,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "seg.duration_trough1_to_peak_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_peak_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    }
+  },
+  "patient_metadata.csv": {
+    "subject_id": {
+      "nonmissing_count": 12,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "metadata_available": {
+      "nonmissing_count": 12,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "hba1c_available": {
+      "nonmissing_count": 12,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "patient.age": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.gender": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.ethnic": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.height": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.weight": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.bmi": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.sbp": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.dbp": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.smoking": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.alcohol": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.physical_activity": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.t2dm_duration_years": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___1": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___2": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___3": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___4": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.medication_oral___1": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.medication_oral___2": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.oral_others": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.insulin___1": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.insulin___2": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.insulin___3": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.fg": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.hba1c": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.c_peptide": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.lactate": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_glucose_day3": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_glucose_day4": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_lactate_day3": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_lactate_day4": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.data_collection_form_complete": {
+      "nonmissing_count": 11,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.met_dosage": {
+      "nonmissing_count": 8,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.met_freq": {
+      "nonmissing_count": 8,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.ethnic_others": {
+      "nonmissing_count": 1,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.alch_freq": {
+      "nonmissing_count": 1,
+      "source": "Lab_data.xlsx"
+    }
+  },
+  "timeseries_with_features_and_metadata.csv": {
+    "event_uid": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "event_id": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "subject_id": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "day": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "event_name": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "split": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "case_path": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "pair_index": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "seg.aggregate_id": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.pair_context": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.label_panel": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.peak_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough2_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_trough1_to_trough2_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_trough1_to_trough2_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.instance_id": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.instance_timestamp": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.meal_med": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.calories": {
+      "nonmissing_count": 812,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.mode": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.instance_to_peak_seconds": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.has_preceding_instance": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.lookup_status": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.anchor_signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.anchor_peak_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.preceding_instance.target_peak_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_trough1_to_peak_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.duration_peak_to_trough2_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.num_preceding_peaks_since_instance": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.num_presceding_peak": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.label_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.matched_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.matched_index": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.time_offset_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.raw_delta_value": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.cgm_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.converted_concentration": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.SEG_converted_concentration_uM": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough1.SEG_uM_conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.label_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.matched_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.matched_index": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.time_offset_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.raw_delta_value": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.cgm_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.converted_concentration": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.SEG_converted_concentration_uM": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.peak.SEG_uM_conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.label_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.matched_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.matched_index": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.time_offset_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.raw_delta_value": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.cgm_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.converted_concentration": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.SEG_converted_concentration_uM": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.point_values.trough2.SEG_uM_conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.start_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.method": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.duration_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.raw_delta_auc_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.cgm_auc_seconds": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.converted_concentration_auc_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.SEG_converted_concentration_uM_auc_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.trough1_to_trough2_auc.SEG_uM_conversion_formula": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.max_derivative": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.min_derivative": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.average_derivative": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.derivative_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.time_normalized_start": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.time_normalized_end": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.start_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.trough1_to_peak.time_normalization": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.max_derivative": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.min_derivative": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.average_derivative": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.derivative_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.time_normalized_start": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.time_normalized_end": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.start_timestamp": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.meal_to_peak.time_normalization": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.max_derivative": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.min_derivative": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.average_derivative": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.derivative_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.time_normalized_start": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.time_normalized_end": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.start_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "seg.interval_derivative_features.peak_to_trough2.time_normalization": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.aggregate_id": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.pair_context": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.label_panel": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.peak_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough2_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_trough2_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_trough2_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.instance_id": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.instance_timestamp": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.meal_med": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.calories": {
+      "nonmissing_count": 812,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.mode": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.instance_to_peak_seconds": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.has_preceding_instance": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.lookup_status": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.anchor_signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.anchor_peak_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.preceding_instance.target_peak_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_peak_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_peak_to_trough2_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.num_preceding_peaks_since_instance": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.num_presceding_peak": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.label_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.matched_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.matched_index": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.time_offset_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.raw_delta_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough1.cgm_value": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.label_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.matched_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.matched_index": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.time_offset_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.raw_delta_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.peak.cgm_value": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.label_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.matched_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.matched_index": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.time_offset_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.raw_delta_value": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.point_values.trough2.cgm_value": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.start_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.method": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.duration_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.raw_delta_auc_seconds": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.trough1_to_trough2_auc.cgm_auc_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.max_derivative": {
+      "nonmissing_count": 1021,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.min_derivative": {
+      "nonmissing_count": 1021,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.average_derivative": {
+      "nonmissing_count": 1021,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.derivative_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.time_normalized_start": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.time_normalized_end": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.start_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.trough1_to_peak.time_normalization": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.max_derivative": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.min_derivative": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.average_derivative": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.derivative_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.time_normalized_start": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.time_normalized_end": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.start_timestamp": {
+      "nonmissing_count": 917,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.meal_to_peak.time_normalization": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.max_derivative": {
+      "nonmissing_count": 1034,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.min_derivative": {
+      "nonmissing_count": 1034,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.average_derivative": {
+      "nonmissing_count": 1034,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.point_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.derivative_count": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.time_normalized_start": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.time_normalized_end": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.start_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.end_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.signal": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.value_source": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.interval_derivative_features.peak_to_trough2.time_normalization": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.name": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.instance_id": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.case_path": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.panel": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.category": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.seg_id": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.cgm_id": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.saved_at_utc": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.cgm_seg_peak_time_difference_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.abs_cgm_seg_peak_time_difference_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.peak_time_difference_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.abs_peak_time_difference_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.delay_seg_minus_cgm_peak_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "pair.delay_abs_seg_cgm_peak_seconds": {
+      "nonmissing_count": 1038,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "prediction_metrics.n": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "prediction_metrics.mard_percent": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "prediction_metrics.rmse": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "prediction_metrics.r_squared": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "metadata_available": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "hba1c_available": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "cgm_timestamp": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "elapsed_seconds_from_cgm_event_start": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "interval": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "actual_cgm_mmol_L": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "predicted_cgm_mmol_L": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.intercept": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_normalized": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_normalized_squared": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_normalized_cubed": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_seg_rate_per_minute": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "model_input.mean_signed_sigmoid_phase": {
+      "nonmissing_count": 1038,
+      "source": "Saved predictions or verified join identifiers"
+    },
+    "patient.age": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.gender": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.ethnic": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.height": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.weight": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.bmi": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.sbp": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.dbp": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.smoking": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.alcohol": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.physical_activity": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.t2dm_duration_years": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___1": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___2": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___3": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.past_mh___4": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.medication_oral___1": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.medication_oral___2": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.oral_others": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.insulin___1": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.insulin___2": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.insulin___3": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.fg": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.hba1c": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.c_peptide": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.lactate": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_glucose_day3": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_glucose_day4": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_lactate_day3": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.poct_lactate_day4": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.data_collection_form_complete": {
+      "nonmissing_count": 1005,
+      "source": "Lab_data.xlsx"
+    },
+    "seg.duration_trough1_to_peak_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "cgm.duration_trough1_to_peak_points": {
+      "nonmissing_count": 0,
+      "source": "alignment_annotations.json: peak_pair_features"
+    },
+    "patient.met_dosage": {
+      "nonmissing_count": 652,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.met_freq": {
+      "nonmissing_count": 652,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.ethnic_others": {
+      "nonmissing_count": 97,
+      "source": "Lab_data.xlsx"
+    },
+    "patient.alch_freq": {
+      "nonmissing_count": 127,
+      "source": "Lab_data.xlsx"
+    }
+  }
+}

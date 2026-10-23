@@ -1,0 +1,1267 @@
+{
+  "meta": {
+    "synthetic": true,
+    "seed": 20261023,
+    "description": "Artificial demonstration only; no study records used."
+  },
+  "saved_segments": {
+    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv": {
+      "labels_glu_cgm": [
+        {
+          "name": "CGM trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-01 08:00:00"
+        },
+        {
+          "name": "CGM peak",
+          "index": 75,
+          "counter": 1,
+          "timestamp": "2030-01-01 09:15:00"
+        },
+        {
+          "name": "CGM trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-01 11:00:00"
+        },
+        {
+          "name": "CGM peak",
+          "index": 250,
+          "counter": 2,
+          "timestamp": "2030-01-01 12:10:00"
+        },
+        {
+          "name": "CGM trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-01 14:00:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-01 08:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 81,
+          "counter": 1,
+          "timestamp": "2030-01-01 09:21:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-01 11:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 257,
+          "counter": 2,
+          "timestamp": "2030-01-01 12:17:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-01 14:00:00"
+        }
+      ],
+      "labels_glu_lac": [
+        {
+          "name": "SEG trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-01 08:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 81,
+          "counter": 1,
+          "timestamp": "2030-01-01 09:21:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-01 11:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 257,
+          "counter": 2,
+          "timestamp": "2030-01-01 12:17:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-01 14:00:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-01 08:00:00"
+        },
+        {
+          "name": "SEL peak",
+          "index": 88,
+          "counter": 1,
+          "timestamp": "2030-01-01 09:28:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-01 11:00:00"
+        },
+        {
+          "name": "SEL peak",
+          "index": 264,
+          "counter": 2,
+          "timestamp": "2030-01-01 12:24:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-01 14:00:00"
+        }
+      ],
+      "peak_aggregates": [
+        {
+          "id": "seg_p81_l0_r180",
+          "signal": "seg",
+          "peak": {
+            "index": 81,
+            "name": "SEG peak",
+            "counter": 1,
+            "timestamp": "2030-01-01 09:21:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "SEG trough",
+            "counter": 1,
+            "timestamp": "2030-01-01 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "SEG trough",
+            "counter": 2,
+            "timestamp": "2030-01-01 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "seg_p257_l180_r360",
+          "signal": "seg",
+          "peak": {
+            "index": 257,
+            "name": "SEG peak",
+            "counter": 2,
+            "timestamp": "2030-01-01 12:17:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "SEG trough",
+            "counter": 2,
+            "timestamp": "2030-01-01 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "SEG trough",
+            "counter": 3,
+            "timestamp": "2030-01-01 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "sel_p88_l0_r180",
+          "signal": "sel",
+          "peak": {
+            "index": 88,
+            "name": "SEL peak",
+            "counter": 1,
+            "timestamp": "2030-01-01 09:28:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "SEL trough",
+            "counter": 1,
+            "timestamp": "2030-01-01 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "SEL trough",
+            "counter": 2,
+            "timestamp": "2030-01-01 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "sel_p264_l180_r360",
+          "signal": "sel",
+          "peak": {
+            "index": 264,
+            "name": "SEL peak",
+            "counter": 2,
+            "timestamp": "2030-01-01 12:24:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "SEL trough",
+            "counter": 2,
+            "timestamp": "2030-01-01 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "SEL trough",
+            "counter": 3,
+            "timestamp": "2030-01-01 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "cgm_p75_l0_r180",
+          "signal": "cgm",
+          "peak": {
+            "index": 75,
+            "name": "CGM peak",
+            "counter": 1,
+            "timestamp": "2030-01-01 09:15:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "CGM trough",
+            "counter": 1,
+            "timestamp": "2030-01-01 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "CGM trough",
+            "counter": 2,
+            "timestamp": "2030-01-01 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "cgm_p250_l180_r360",
+          "signal": "cgm",
+          "peak": {
+            "index": 250,
+            "name": "CGM peak",
+            "counter": 2,
+            "timestamp": "2030-01-01 12:10:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "CGM trough",
+            "counter": 2,
+            "timestamp": "2030-01-01 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "CGM trough",
+            "counter": 3,
+            "timestamp": "2030-01-01 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        }
+      ]
+    },
+    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv": {
+      "labels_glu_cgm": [
+        {
+          "name": "CGM trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-02 08:00:00"
+        },
+        {
+          "name": "CGM peak",
+          "index": 75,
+          "counter": 1,
+          "timestamp": "2030-01-02 09:15:00"
+        },
+        {
+          "name": "CGM trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-02 11:00:00"
+        },
+        {
+          "name": "CGM peak",
+          "index": 255,
+          "counter": 2,
+          "timestamp": "2030-01-02 12:15:00"
+        },
+        {
+          "name": "CGM trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-02 14:00:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-02 08:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 84,
+          "counter": 1,
+          "timestamp": "2030-01-02 09:24:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-02 11:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 261,
+          "counter": 2,
+          "timestamp": "2030-01-02 12:21:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-02 14:00:00"
+        }
+      ],
+      "labels_glu_lac": [
+        {
+          "name": "SEG trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-02 08:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 84,
+          "counter": 1,
+          "timestamp": "2030-01-02 09:24:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-02 11:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 261,
+          "counter": 2,
+          "timestamp": "2030-01-02 12:21:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-02 14:00:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-02 08:00:00"
+        },
+        {
+          "name": "SEL peak",
+          "index": 91,
+          "counter": 1,
+          "timestamp": "2030-01-02 09:31:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-02 11:00:00"
+        },
+        {
+          "name": "SEL peak",
+          "index": 268,
+          "counter": 2,
+          "timestamp": "2030-01-02 12:28:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-02 14:00:00"
+        }
+      ],
+      "peak_aggregates": [
+        {
+          "id": "seg_p84_l0_r180",
+          "signal": "seg",
+          "peak": {
+            "index": 84,
+            "name": "SEG peak",
+            "counter": 1,
+            "timestamp": "2030-01-02 09:24:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "SEG trough",
+            "counter": 1,
+            "timestamp": "2030-01-02 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "SEG trough",
+            "counter": 2,
+            "timestamp": "2030-01-02 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "seg_p261_l180_r360",
+          "signal": "seg",
+          "peak": {
+            "index": 261,
+            "name": "SEG peak",
+            "counter": 2,
+            "timestamp": "2030-01-02 12:21:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "SEG trough",
+            "counter": 2,
+            "timestamp": "2030-01-02 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "SEG trough",
+            "counter": 3,
+            "timestamp": "2030-01-02 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "sel_p91_l0_r180",
+          "signal": "sel",
+          "peak": {
+            "index": 91,
+            "name": "SEL peak",
+            "counter": 1,
+            "timestamp": "2030-01-02 09:31:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "SEL trough",
+            "counter": 1,
+            "timestamp": "2030-01-02 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "SEL trough",
+            "counter": 2,
+            "timestamp": "2030-01-02 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "sel_p268_l180_r360",
+          "signal": "sel",
+          "peak": {
+            "index": 268,
+            "name": "SEL peak",
+            "counter": 2,
+            "timestamp": "2030-01-02 12:28:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "SEL trough",
+            "counter": 2,
+            "timestamp": "2030-01-02 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "SEL trough",
+            "counter": 3,
+            "timestamp": "2030-01-02 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "cgm_p75_l0_r180",
+          "signal": "cgm",
+          "peak": {
+            "index": 75,
+            "name": "CGM peak",
+            "counter": 1,
+            "timestamp": "2030-01-02 09:15:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "CGM trough",
+            "counter": 1,
+            "timestamp": "2030-01-02 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "CGM trough",
+            "counter": 2,
+            "timestamp": "2030-01-02 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "cgm_p255_l180_r360",
+          "signal": "cgm",
+          "peak": {
+            "index": 255,
+            "name": "CGM peak",
+            "counter": 2,
+            "timestamp": "2030-01-02 12:15:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "CGM trough",
+            "counter": 2,
+            "timestamp": "2030-01-02 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "CGM trough",
+            "counter": 3,
+            "timestamp": "2030-01-02 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        }
+      ]
+    },
+    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv": {
+      "labels_glu_cgm": [
+        {
+          "name": "CGM trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-03 08:00:00"
+        },
+        {
+          "name": "CGM peak",
+          "index": 80,
+          "counter": 1,
+          "timestamp": "2030-01-03 09:20:00"
+        },
+        {
+          "name": "CGM trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-03 11:00:00"
+        },
+        {
+          "name": "CGM peak",
+          "index": 255,
+          "counter": 2,
+          "timestamp": "2030-01-03 12:15:00"
+        },
+        {
+          "name": "CGM trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-03 14:00:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-03 08:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 87,
+          "counter": 1,
+          "timestamp": "2030-01-03 09:27:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-03 11:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 265,
+          "counter": 2,
+          "timestamp": "2030-01-03 12:25:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-03 14:00:00"
+        }
+      ],
+      "labels_glu_lac": [
+        {
+          "name": "SEG trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-03 08:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 87,
+          "counter": 1,
+          "timestamp": "2030-01-03 09:27:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-03 11:00:00"
+        },
+        {
+          "name": "SEG peak",
+          "index": 265,
+          "counter": 2,
+          "timestamp": "2030-01-03 12:25:00"
+        },
+        {
+          "name": "SEG trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-03 14:00:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 0,
+          "counter": 1,
+          "timestamp": "2030-01-03 08:00:00"
+        },
+        {
+          "name": "SEL peak",
+          "index": 94,
+          "counter": 1,
+          "timestamp": "2030-01-03 09:34:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 180,
+          "counter": 2,
+          "timestamp": "2030-01-03 11:00:00"
+        },
+        {
+          "name": "SEL peak",
+          "index": 272,
+          "counter": 2,
+          "timestamp": "2030-01-03 12:32:00"
+        },
+        {
+          "name": "SEL trough",
+          "index": 360,
+          "counter": 3,
+          "timestamp": "2030-01-03 14:00:00"
+        }
+      ],
+      "peak_aggregates": [
+        {
+          "id": "seg_p87_l0_r180",
+          "signal": "seg",
+          "peak": {
+            "index": 87,
+            "name": "SEG peak",
+            "counter": 1,
+            "timestamp": "2030-01-03 09:27:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "SEG trough",
+            "counter": 1,
+            "timestamp": "2030-01-03 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "SEG trough",
+            "counter": 2,
+            "timestamp": "2030-01-03 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "seg_p265_l180_r360",
+          "signal": "seg",
+          "peak": {
+            "index": 265,
+            "name": "SEG peak",
+            "counter": 2,
+            "timestamp": "2030-01-03 12:25:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "SEG trough",
+            "counter": 2,
+            "timestamp": "2030-01-03 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "SEG trough",
+            "counter": 3,
+            "timestamp": "2030-01-03 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "sel_p94_l0_r180",
+          "signal": "sel",
+          "peak": {
+            "index": 94,
+            "name": "SEL peak",
+            "counter": 1,
+            "timestamp": "2030-01-03 09:34:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "SEL trough",
+            "counter": 1,
+            "timestamp": "2030-01-03 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "SEL trough",
+            "counter": 2,
+            "timestamp": "2030-01-03 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "sel_p272_l180_r360",
+          "signal": "sel",
+          "peak": {
+            "index": 272,
+            "name": "SEL peak",
+            "counter": 2,
+            "timestamp": "2030-01-03 12:32:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "SEL trough",
+            "counter": 2,
+            "timestamp": "2030-01-03 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "SEL trough",
+            "counter": 3,
+            "timestamp": "2030-01-03 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "cgm_p80_l0_r180",
+          "signal": "cgm",
+          "peak": {
+            "index": 80,
+            "name": "CGM peak",
+            "counter": 1,
+            "timestamp": "2030-01-03 09:20:00"
+          },
+          "left_trough": {
+            "index": 0,
+            "name": "CGM trough",
+            "counter": 1,
+            "timestamp": "2030-01-03 08:00:00"
+          },
+          "right_trough": {
+            "index": 180,
+            "name": "CGM trough",
+            "counter": 2,
+            "timestamp": "2030-01-03 11:00:00"
+          },
+          "window": {
+            "start_index": 0,
+            "end_index": 180,
+            "duration_points": 180
+          }
+        },
+        {
+          "id": "cgm_p255_l180_r360",
+          "signal": "cgm",
+          "peak": {
+            "index": 255,
+            "name": "CGM peak",
+            "counter": 2,
+            "timestamp": "2030-01-03 12:15:00"
+          },
+          "left_trough": {
+            "index": 180,
+            "name": "CGM trough",
+            "counter": 2,
+            "timestamp": "2030-01-03 11:00:00"
+          },
+          "right_trough": {
+            "index": 360,
+            "name": "CGM trough",
+            "counter": 3,
+            "timestamp": "2030-01-03 14:00:00"
+          },
+          "window": {
+            "start_index": 180,
+            "end_index": 360,
+            "duration_points": 180
+          }
+        }
+      ]
+    }
+  },
+  "peak_pair_features": {
+    "cases": {
+      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv": {
+        "paired_features": [
+          {
+            "name": "CGM_vs_SEG_1",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::CGM_vs_SEG_1",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "category": "CGM_vs_SEG",
+            "panel": "glu_cgm",
+            "selected_peak_metadata": {
+              "cgm": {
+                "aggregate_id": "cgm_p75_l0_r180",
+                "signal": "cgm",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-01 08:00:00",
+                "peak_timestamp": "2030-01-01 09:15:00",
+                "trough2_timestamp": "2030-01-01 11:00:00",
+                "preceding_instance": null
+              },
+              "seg": {
+                "aggregate_id": "seg_p81_l0_r180",
+                "signal": "seg",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-01 08:00:00",
+                "peak_timestamp": "2030-01-01 09:21:00",
+                "trough2_timestamp": "2030-01-01 11:00:00",
+                "preceding_instance": null
+              }
+            },
+            "cgm_id": "cgm_p75_l0_r180",
+            "seg_id": "seg_p81_l0_r180"
+          },
+          {
+            "name": "SEG_vs_SEL_1",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::SEG_vs_SEL_1",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "category": "SEG_vs_SEL",
+            "panel": "glu_lac",
+            "selected_peak_metadata": {
+              "seg": {
+                "aggregate_id": "seg_p81_l0_r180",
+                "signal": "seg",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-01 08:00:00",
+                "peak_timestamp": "2030-01-01 09:21:00",
+                "trough2_timestamp": "2030-01-01 11:00:00",
+                "preceding_instance": null
+              },
+              "sel": {
+                "aggregate_id": "sel_p88_l0_r180",
+                "signal": "sel",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-01 08:00:00",
+                "peak_timestamp": "2030-01-01 09:28:00",
+                "trough2_timestamp": "2030-01-01 11:00:00",
+                "preceding_instance": null
+              }
+            },
+            "seg_id": "seg_p81_l0_r180",
+            "sel_id": "sel_p88_l0_r180"
+          },
+          {
+            "name": "CGM_vs_SEG_2",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::CGM_vs_SEG_2",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "category": "CGM_vs_SEG",
+            "panel": "glu_cgm",
+            "selected_peak_metadata": {
+              "cgm": {
+                "aggregate_id": "cgm_p250_l180_r360",
+                "signal": "cgm",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-01 11:00:00",
+                "peak_timestamp": "2030-01-01 12:10:00",
+                "trough2_timestamp": "2030-01-01 14:00:00",
+                "preceding_instance": null
+              },
+              "seg": {
+                "aggregate_id": "seg_p257_l180_r360",
+                "signal": "seg",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-01 11:00:00",
+                "peak_timestamp": "2030-01-01 12:17:00",
+                "trough2_timestamp": "2030-01-01 14:00:00",
+                "preceding_instance": null
+              }
+            },
+            "cgm_id": "cgm_p250_l180_r360",
+            "seg_id": "seg_p257_l180_r360"
+          },
+          {
+            "name": "SEG_vs_SEL_2",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::SEG_vs_SEL_2",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "category": "SEG_vs_SEL",
+            "panel": "glu_lac",
+            "selected_peak_metadata": {
+              "seg": {
+                "aggregate_id": "seg_p257_l180_r360",
+                "signal": "seg",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-01 11:00:00",
+                "peak_timestamp": "2030-01-01 12:17:00",
+                "trough2_timestamp": "2030-01-01 14:00:00",
+                "preceding_instance": null
+              },
+              "sel": {
+                "aggregate_id": "sel_p264_l180_r360",
+                "signal": "sel",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-01 11:00:00",
+                "peak_timestamp": "2030-01-01 12:24:00",
+                "trough2_timestamp": "2030-01-01 14:00:00",
+                "preceding_instance": null
+              }
+            },
+            "seg_id": "seg_p257_l180_r360",
+            "sel_id": "sel_p264_l180_r360"
+          }
+        ]
+      },
+      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv": {
+        "paired_features": [
+          {
+            "name": "CGM_vs_SEG_1",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::CGM_vs_SEG_1",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "category": "CGM_vs_SEG",
+            "panel": "glu_cgm",
+            "selected_peak_metadata": {
+              "cgm": {
+                "aggregate_id": "cgm_p75_l0_r180",
+                "signal": "cgm",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-02 08:00:00",
+                "peak_timestamp": "2030-01-02 09:15:00",
+                "trough2_timestamp": "2030-01-02 11:00:00",
+                "preceding_instance": null
+              },
+              "seg": {
+                "aggregate_id": "seg_p84_l0_r180",
+                "signal": "seg",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-02 08:00:00",
+                "peak_timestamp": "2030-01-02 09:24:00",
+                "trough2_timestamp": "2030-01-02 11:00:00",
+                "preceding_instance": null
+              }
+            },
+            "cgm_id": "cgm_p75_l0_r180",
+            "seg_id": "seg_p84_l0_r180"
+          },
+          {
+            "name": "SEG_vs_SEL_1",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::SEG_vs_SEL_1",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "category": "SEG_vs_SEL",
+            "panel": "glu_lac",
+            "selected_peak_metadata": {
+              "seg": {
+                "aggregate_id": "seg_p84_l0_r180",
+                "signal": "seg",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-02 08:00:00",
+                "peak_timestamp": "2030-01-02 09:24:00",
+                "trough2_timestamp": "2030-01-02 11:00:00",
+                "preceding_instance": null
+              },
+              "sel": {
+                "aggregate_id": "sel_p91_l0_r180",
+                "signal": "sel",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-02 08:00:00",
+                "peak_timestamp": "2030-01-02 09:31:00",
+                "trough2_timestamp": "2030-01-02 11:00:00",
+                "preceding_instance": null
+              }
+            },
+            "seg_id": "seg_p84_l0_r180",
+            "sel_id": "sel_p91_l0_r180"
+          },
+          {
+            "name": "CGM_vs_SEG_2",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::CGM_vs_SEG_2",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "category": "CGM_vs_SEG",
+            "panel": "glu_cgm",
+            "selected_peak_metadata": {
+              "cgm": {
+                "aggregate_id": "cgm_p255_l180_r360",
+                "signal": "cgm",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-02 11:00:00",
+                "peak_timestamp": "2030-01-02 12:15:00",
+                "trough2_timestamp": "2030-01-02 14:00:00",
+                "preceding_instance": null
+              },
+              "seg": {
+                "aggregate_id": "seg_p261_l180_r360",
+                "signal": "seg",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-02 11:00:00",
+                "peak_timestamp": "2030-01-02 12:21:00",
+                "trough2_timestamp": "2030-01-02 14:00:00",
+                "preceding_instance": null
+              }
+            },
+            "cgm_id": "cgm_p255_l180_r360",
+            "seg_id": "seg_p261_l180_r360"
+          },
+          {
+            "name": "SEG_vs_SEL_2",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::SEG_vs_SEL_2",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "category": "SEG_vs_SEL",
+            "panel": "glu_lac",
+            "selected_peak_metadata": {
+              "seg": {
+                "aggregate_id": "seg_p261_l180_r360",
+                "signal": "seg",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-02 11:00:00",
+                "peak_timestamp": "2030-01-02 12:21:00",
+                "trough2_timestamp": "2030-01-02 14:00:00",
+                "preceding_instance": null
+              },
+              "sel": {
+                "aggregate_id": "sel_p268_l180_r360",
+                "signal": "sel",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-02 11:00:00",
+                "peak_timestamp": "2030-01-02 12:28:00",
+                "trough2_timestamp": "2030-01-02 14:00:00",
+                "preceding_instance": null
+              }
+            },
+            "seg_id": "seg_p261_l180_r360",
+            "sel_id": "sel_p268_l180_r360"
+          }
+        ]
+      },
+      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv": {
+        "paired_features": [
+          {
+            "name": "CGM_vs_SEG_1",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::CGM_vs_SEG_1",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "category": "CGM_vs_SEG",
+            "panel": "glu_cgm",
+            "selected_peak_metadata": {
+              "cgm": {
+                "aggregate_id": "cgm_p80_l0_r180",
+                "signal": "cgm",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-03 08:00:00",
+                "peak_timestamp": "2030-01-03 09:20:00",
+                "trough2_timestamp": "2030-01-03 11:00:00",
+                "preceding_instance": null
+              },
+              "seg": {
+                "aggregate_id": "seg_p87_l0_r180",
+                "signal": "seg",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-03 08:00:00",
+                "peak_timestamp": "2030-01-03 09:27:00",
+                "trough2_timestamp": "2030-01-03 11:00:00",
+                "preceding_instance": null
+              }
+            },
+            "cgm_id": "cgm_p80_l0_r180",
+            "seg_id": "seg_p87_l0_r180"
+          },
+          {
+            "name": "SEG_vs_SEL_1",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::SEG_vs_SEL_1",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "category": "SEG_vs_SEL",
+            "panel": "glu_lac",
+            "selected_peak_metadata": {
+              "seg": {
+                "aggregate_id": "seg_p87_l0_r180",
+                "signal": "seg",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-03 08:00:00",
+                "peak_timestamp": "2030-01-03 09:27:00",
+                "trough2_timestamp": "2030-01-03 11:00:00",
+                "preceding_instance": null
+              },
+              "sel": {
+                "aggregate_id": "sel_p94_l0_r180",
+                "signal": "sel",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-03 08:00:00",
+                "peak_timestamp": "2030-01-03 09:34:00",
+                "trough2_timestamp": "2030-01-03 11:00:00",
+                "preceding_instance": null
+              }
+            },
+            "seg_id": "seg_p87_l0_r180",
+            "sel_id": "sel_p94_l0_r180"
+          },
+          {
+            "name": "CGM_vs_SEG_2",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::CGM_vs_SEG_2",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "category": "CGM_vs_SEG",
+            "panel": "glu_cgm",
+            "selected_peak_metadata": {
+              "cgm": {
+                "aggregate_id": "cgm_p255_l180_r360",
+                "signal": "cgm",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-03 11:00:00",
+                "peak_timestamp": "2030-01-03 12:15:00",
+                "trough2_timestamp": "2030-01-03 14:00:00",
+                "preceding_instance": null
+              },
+              "seg": {
+                "aggregate_id": "seg_p265_l180_r360",
+                "signal": "seg",
+                "pair_context": "CGM_vs_SEG",
+                "label_panel": "glu_cgm",
+                "trough1_timestamp": "2030-01-03 11:00:00",
+                "peak_timestamp": "2030-01-03 12:25:00",
+                "trough2_timestamp": "2030-01-03 14:00:00",
+                "preceding_instance": null
+              }
+            },
+            "cgm_id": "cgm_p255_l180_r360",
+            "seg_id": "seg_p265_l180_r360"
+          },
+          {
+            "name": "SEG_vs_SEL_2",
+            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::SEG_vs_SEL_2",
+            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "category": "SEG_vs_SEL",
+            "panel": "glu_lac",
+            "selected_peak_metadata": {
+              "seg": {
+                "aggregate_id": "seg_p265_l180_r360",
+                "signal": "seg",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-03 11:00:00",
+                "peak_timestamp": "2030-01-03 12:25:00",
+                "trough2_timestamp": "2030-01-03 14:00:00",
+                "preceding_instance": null
+              },
+              "sel": {
+                "aggregate_id": "sel_p272_l180_r360",
+                "signal": "sel",
+                "pair_context": "SEG_vs_SEL",
+                "label_panel": "glu_lac",
+                "trough1_timestamp": "2030-01-03 11:00:00",
+                "peak_timestamp": "2030-01-03 12:32:00",
+                "trough2_timestamp": "2030-01-03 14:00:00",
+                "preceding_instance": null
+              }
+            },
+            "seg_id": "seg_p265_l180_r360",
+            "sel_id": "sel_p272_l180_r360"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "seed": 20261023,
+  "participants": 3,
+  "sensor_rows_per_participant": 361,
+  "cgm_rows_per_participant": 73,
+  "paired_records": 12,
+  "peak_metadata_records": 24,
+  "pipeline": [
+    "raw sensor CSV + cleaned CGM CSV",
+    "tool2_process_rows: baseline correction, CGM matching, normalization",
+    "processed CSV + metadata JSON",
+    "peak/trough labels and paired annotation JSON",
+    "process_annotation_payload: durations, AUC, derivatives, concentration features"
+  ],
+  "limitations": "Illustrative Gaussian responses, not a physiological model. No real participant data, lab workbook, meal photos, or clinical validation. Timestamps in feature-engineering provenance reflect execution time; signal generation is seeded."
+}

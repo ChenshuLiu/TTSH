@@ -1,0 +1,6 @@
+# Third-party dependencies for the copied dashboard and associated functions.
+# Core dashboard / feature engineering otherwise use Python's standard library.
+# These enable NumPy calculations and scikit-learn t-SNE in the analysis panel.
+# Versions are unpinned: this is a dependency manifest, not a tested environment lock.
+numpy
+scikit-learn

@@ -1,0 +1,343 @@
+{
+  "schema": "hba1c-bundle-verification-v1",
+  "status": "passed",
+  "checkpoint_count": 25,
+  "passed": 25,
+  "failed": 0,
+  "source_files_verified": 8,
+  "input_type": "fixed_synthetic_CGM_only",
+  "training_performed": false,
+  "private_data_read": false,
+  "checks": [
+    "complete_unique_model_seed_roster",
+    "checkpoint_sha256_and_size",
+    "original_source_sha256",
+    "strict_original_checkpoint_loader_audits",
+    "CGM_only_configuration",
+    "three_class_probabilities",
+    "argmax_class_labels",
+    "patient_mean_event_probabilities"
+  ],
+  "source_files": [
+    {
+      "path": "cgm_bag/__init__.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/models.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/knn.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/training.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/metadata.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/event_features.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/cohorts.py",
+      "status": "passed"
+    },
+    {
+      "path": "cgm_bag/ablation.py",
+      "status": "passed"
+    }
+  ],
+  "models": [
+    {
+      "architecture": "knn",
+      "seed": 42,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "1d_cnn",
+      "seed": 42,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "tcn",
+      "seed": 42,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "bigru",
+      "seed": 42,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "transformer",
+      "seed": 42,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "knn",
+      "seed": 43,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "1d_cnn",
+      "seed": 43,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "tcn",
+      "seed": 43,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "bigru",
+      "seed": 43,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "transformer",
+      "seed": 43,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "knn",
+      "seed": 44,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "1d_cnn",
+      "seed": 44,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "tcn",
+      "seed": 44,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "bigru",
+      "seed": 44,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "transformer",
+      "seed": 44,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "knn",
+      "seed": 45,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "1d_cnn",
+      "seed": 45,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "tcn",
+      "seed": 45,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "bigru",
+      "seed": 45,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "transformer",
+      "seed": 45,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "knn",
+      "seed": 46,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "1d_cnn",
+      "seed": 46,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "tcn",
+      "seed": 46,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "bigru",
+      "seed": 46,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    },
+    {
+      "architecture": "transformer",
+      "seed": 46,
+      "status": "passed",
+      "checkpoint_sha256": "matched",
+      "cgm_only": true,
+      "synthetic_events": 3,
+      "synthetic_patients": 2,
+      "probability_checks": "passed",
+      "patient_aggregation": "passed"
+    }
+  ],
+  "handoff_date": "2026-10-22",
+  "additional_checks": {
+    "relocated_imports": "passed",
+    "all_25_wrapper_predictions_match_original_functions_exactly": "passed",
+    "invalid_input_cases_rejected": 16,
+    "relocated_cli_knn_and_transformer": "passed",
+    "relocated_python_example": "passed",
+    "original_checkpoint_bytes_unchanged": 25,
+    "no_private_event_identifiers_or_private_source_fingerprint_in_checkpoint_metadata": true,
+    "no_absolute_user_paths_in_deliverable_text": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "tool": "tool2",
+  "source_path": "Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+  "start_index": 0,
+  "end_index": 360,
+  "synthetic": true
+}

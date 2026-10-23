@@ -1,0 +1,55 @@
+{
+  "dataset": "BIG_IDEAS",
+  "source_archive": "BIG IDEAS 2.zip",
+  "source_archive_sha256": "8bd9ac9b4974f70b7ad5848bfe2df94051a4af297f7ca24d49adac739b6ee15c",
+  "reference_format": "user-supplied hall2018_preprocessing.zip",
+  "input_glucose_unit": "mg/dL",
+  "output_glucose_unit": "mmol/L",
+  "conversion": "CGM = numeric glucose / 18.0156",
+  "event_filter": "Event Type == EGV; alert thresholds are not measurements",
+  "timestamp_source": "Timestamp (YYYY-MM-DDThh:mm:ss)",
+  "timezone": "not_provided; preserve wall-clock time without timezone conversion",
+  "invalid_timestamps": "exclude and audit",
+  "nonnumeric_glucose": "missing CGM; retain sensor_code",
+  "duplicate_timestamps": "same patient exact timestamps: mean glucose; source rows retained in audit",
+  "gap_policy": "preserve all gaps; separately list gaps >25 minutes; no filling",
+  "label_source": "Demographics.csv HbA1c",
+  "hba1c_unit": "%",
+  "hba1c_unit_note": "source header has no unit; use the same percent convention as the existing project; values 5.3-6.4",
+  "hba1c_measurement_date": "not_provided",
+  "label_rule": "Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5",
+  "smoothing": false,
+  "resampling": false,
+  "interpolation": false,
+  "peak_detection": false,
+  "feature_engineering": false,
+  "train_validation_split": false,
+  "age_policy": "do not derive from unverified device DOB; 15/16 source DOB values are 1970-01-01",
+  "summary": {
+    "patients": 16,
+    "labels": {
+      "Healthy": 8,
+      "Prediabetes": 8,
+      "T2D": 0
+    },
+    "rows_input": 37080,
+    "egv_rows_input": 36898,
+    "rows_output": 36898,
+    "non_egv_rows_excluded": 182,
+    "invalid_timestamp_rows": 0,
+    "duplicate_timestamp_rows_merged": 0,
+    "valid_cgm": 36898,
+    "missing_cgm": 0,
+    "gaps_over_25_minutes": 20,
+    "max_gap_minutes": 1314.9833333333333,
+    "clinical_available": [
+      "gender"
+    ],
+    "clinical_unavailable": [
+      "age",
+      "bmi",
+      "height_cm",
+      "weight_kg"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "source_comparison": "all16 source EGV files compared row-by-row",
+  "patients": 16,
+  "raw_egv_rows": 36898,
+  "output_rows": 36898,
+  "classes": {
+    "Healthy": 8,
+    "Prediabetes": 8,
+    "T2D": 0
+  },
+  "source_times_and_rows_preserved": true,
+  "source_glucose_values_preserved": true,
+  "mmol_L_max_absolute_difference_from_source_conversion": 4.0123e-11,
+  "conversion_divisor": 18.0156,
+  "metadata_ids_and_hba1c_verified": true,
+  "age_bmi_not_inferred": true,
+  "gap_audit_over25minutes_count": 20,
+  "deterministic_reproduction_files": 25,
+  "deterministic_reproduction_identical": true,
+  "hba1c_threshold_boundary_checks_passed": true,
+  "whole_zip_vs_explicit_upload_identical": true,
+  "app_version": "1.2.0",
+  "default_segment_quality_counts": {
+    "trough_to_peak": {
+      "segments": 895,
+      "patients": 16
+    },
+    "trough_peak_trough": {
+      "segments": 961,
+      "patients": 16
+    }
+  },
+  "segment_counts_note": "Software compatibility check with existing default QC; no model trained and no private-data tuning."
+}

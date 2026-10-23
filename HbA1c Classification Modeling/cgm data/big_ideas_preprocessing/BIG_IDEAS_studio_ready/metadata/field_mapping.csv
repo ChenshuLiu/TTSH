@@ -1,0 +1,10 @@
+﻿output_field,source_field,transformation
+subject_id,Dexcom_NNN.csv filename; Demographics.ID,BIGIDEAS_ + 3-digit source ID
+Timestamp,Timestamp (YYYY-MM-DDThh:mm:ss),parse literal local wall-clock time; timezone unavailable
+CGM,Glucose Value (mg/dL),EGV only; numeric mg/dL / 18.0156
+CGM_unit,Glucose Value (mg/dL) header,mmol/L
+label,Demographics.HbA1c,Healthy:<5.7; Prediabetes:5.7<=HbA1c<6.5; T2D:>=6.5
+hba1c,Demographics.HbA1c,"unchanged; % convention, no source unit annotation"
+gender,Demographics.Gender,retain FEMALE/MALE text; no numeric recoding
+age,not provided,leave missing; do not derive from unverified device DOB
+bmi,not provided,leave missing

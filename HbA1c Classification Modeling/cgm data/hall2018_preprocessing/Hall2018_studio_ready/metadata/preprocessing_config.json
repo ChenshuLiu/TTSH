@@ -1,0 +1,21 @@
+{
+  "source_cgm_file": "/mnt/data/pbio.2005143.s010",
+  "source_clinical_db": "/mnt/data/pbio.2005143.s014.db",
+  "timestamp_source": "DisplayTime",
+  "glucose_source": "GlucoseValue",
+  "input_glucose_unit": "mg/dL",
+  "output_glucose_unit": "mmol/L",
+  "conversion": "CGM = GlucoseValue / 18.0156",
+  "non_numeric_sensor_values": "converted to NaN and retained in sensor_code",
+  "label_source": "clinical.diagnosis",
+  "label_mapping": {
+    "non-diabetic": "Healthy",
+    "pre-diabetic": "Prediabetes",
+    "diabetic": "T2D"
+  },
+  "smoothing": false,
+  "resampling": false,
+  "interpolation": false,
+  "peak_detection": false,
+  "feature_engineering": false
+}
