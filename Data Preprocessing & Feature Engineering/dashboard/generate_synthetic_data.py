@@ -25,7 +25,7 @@ def write_csv(path, rows, columns):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output', type=Path, default=Path(__file__).resolve().parent / 'synthetic_demo')
+    parser.add_argument('--output', type=Path, default=Path(__file__).resolve().parent.parent / 'synthetic_demo')
     parser.add_argument('--seed', type=int, default=20261023)
     args = parser.parse_args()
     root = args.output.resolve()
@@ -56,11 +56,11 @@ def main():
             raw.append({'Timestamp': ts, 'Channel1': baseline - seg, 'Channel2': baseline, 'Channel3': baseline - sel})
             if minute % 5 == 0:
                 cgm.append({'timestamp': ts, 'glucose_mmol_L': round(4.8 + subject * 0.3 + (1.3 + subject * 0.4) * pulse(), 5)})
-        source = f'Organized Data/{participant}/Day01/{participant}_Day01_2030010{subject}_SEB.csv'
+        source = f'raw_data/sensor/{participant}/Day01/{participant}_Day01_2030010{subject}_SEB.csv'
         write_csv(root / source, raw, ['Timestamp', 'Channel1', 'Channel2', 'Channel3'])
-        write_csv(root / f'cleaned_cgm_files/{participant}_cleaned.csv', cgm, ['timestamp', 'glucose_mmol_L'])
+        write_csv(root / f'raw_data/cgm/{participant}_cleaned.csv', cgm, ['timestamp', 'glucose_mmol_L'])
         processed = alignment.tool2_process_rows(alignment.load_tool2_series(source), source, 0, 360)
-        case = 'analysis/SEB_CGM_alignment/processed_delta_files/' + source
+        case = 'annotated_data/series/' + source.removeprefix('raw_data/sensor/')
         write_csv(root / case, processed, columns)
         write_json(root / (case + '.metadata.json'), {'tool': 'tool2', 'source_path': source, 'start_index': 0, 'end_index': 360, 'synthetic': True})
         state = {'labels_glu_cgm': [], 'labels_glu_lac': []}
@@ -87,13 +87,13 @@ def main():
                         'trough1_timestamp': agg['left_trough']['timestamp'], 'peak_timestamp': agg['peak']['timestamp'], 'trough2_timestamp': agg['right_trough']['timestamp'], 'preceding_instance': None}
                 pairs.append(pair)
         payload['peak_pair_features']['cases'][case] = {'paired_features': pairs}
-    write_json(root / 'annotations_input.json', payload)
+    write_json(root / 'annotated_data/annotations_input.json', payload)
     output, summary = features.process_annotation_payload(payload)
     assert not summary['case_errors'], summary
     assert summary['cases_seen'] == 3 and summary['peak_metadata_updated'] == 24, summary
-    write_json(root / 'analysis/SEB_CGM_alignment/state/alignment_annotations.json', output)
-    write_json(root / 'feature_engineering_summary.json', summary)
-    write_json(root / 'manifest.json', {'synthetic': True, 'seed': args.seed, 'participants': 3, 'sensor_rows_per_participant': 361,
+    write_json(root / 'annotated_data/alignment_annotations.json', output)
+    write_json(root / 'analysis/feature_engineering_summary.json', summary)
+    write_json(root / 'analysis/manifest.json', {'synthetic': True, 'seed': args.seed, 'participants': 3, 'sensor_rows_per_participant': 361,
         'cgm_rows_per_participant': 73, 'paired_records': 12, 'peak_metadata_records': 24,
         'pipeline': ['raw sensor CSV + cleaned CGM CSV', 'tool2_process_rows: baseline correction, CGM matching, normalization', 'processed CSV + metadata JSON', 'peak/trough labels and paired annotation JSON', 'process_annotation_payload: durations, AUC, derivatives, concentration features'],
         'limitations': 'Illustrative Gaussian responses, not a physiological model. No real participant data, lab workbook, meal photos, or clinical validation. Timestamps in feature-engineering provenance reflect execution time; signal generation is seeded.'})

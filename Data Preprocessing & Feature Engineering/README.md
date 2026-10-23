@@ -1,71 +1,85 @@
 # SEB/CGM data processing and feature engineering
 
-This package provides a local dashboard for inspecting sensor and CGM time series, labeling peaks and troughs, matching signal responses, and exploring engineered features in the **Analysis Results** dashboard. The code uses `SEG` for the glucose sensor and `SEL` for the lactate sensor.
+A local dashboard for inspecting sensor and CGM time series, labeling peaks and troughs, matching responses, and exploring engineered features. The code uses `SEG` for the glucose sensor and `SEL` for the lactate sensor.
 
-## Data processing pipeline
+## Processing pipeline
 
-![Data processing pipeline: wearable signals, preprocessing and delta extraction, peak-instance annotation, and feature engineering with dietary and patient metadata](Data%20Processing%20Pipeline.png)
+![Wearable data preprocessing, peak annotation, and feature engineering pipeline](assets/Data%20Processing%20Pipeline.png)
 
-The figure shows the full study workflow. This package contains the alignment and analysis dashboards, shared preprocessing functions, and temporal feature engineering. The original manual data-quality screening and separate meal/medicine-labeling dashboards are not included. Dietary and patient metadata require separately prepared inputs; the synthetic example demonstrates the signal-processing and peak-labeling branch. The figure's cohort counts describe the study, not the example dataset. Consult `cgm_feature_engineering.py` for the features implemented in this snapshot; the figure is not a list of automatically generated outputs.
+The figure shows the full study workflow. This package includes alignment, preprocessing functions, peak feature engineering, and the **Analysis Results** dashboard. Separate manual quality-screening and meal/medicine-labeling dashboards are not included. Dietary and patient metadata require separately prepared inputs. The figure's cohort counts refer to the study, not the synthetic example. See `dashboard/cgm_feature_engineering.py` for the implemented features.
 
-## Quick start: run the included example
+## Run the dashboard
 
-Use a Python 3 environment on macOS or Linux. Native Windows is not supported by the server's `fcntl` locking; use a Linux environment such as WSL. Run these commands from the folder containing this README and `server.py`:
+Use Python 3 on macOS or Linux (or WSL on Windows; the server uses Unix `fcntl` locking). From the package folder containing this README:
 
 ```sh
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python server.py
+python dashboard/server.py
 ```
 
-Open **http://127.0.0.1:8768** in your browser. Keep the terminal open while using the dashboard; press **Ctrl+C** to stop it. For subsequent runs, activate `.venv` and run `python server.py` again.
+Open **http://127.0.0.1:8768**. Keep the terminal open; press **Ctrl+C** to stop. For subsequent runs, activate `.venv` and run the server again.
 
-A plain launch uses `synthetic_demo/` if the default data root has no `analysis/SEB_CGM_alignment/processed_delta_files/` directory. To select the example explicitly:
+The default launch selects the bundled `synthetic_demo/` unless the package itself has an `annotated_data/series/` directory. To explicitly choose the demo or a different dataset:
 
 ```sh
-SEB_DATA_ROOT="$PWD/synthetic_demo" python server.py
+SEB_DATA_ROOT="$PWD/synthetic_demo" python dashboard/server.py
+# Or:
+SEB_DATA_ROOT="/absolute/path/to/my_dataset" python dashboard/server.py
 ```
 
-The startup output prints the selected **Data root**, **Datasets found**, source folder, and annotation file. The bundled example should show **3 datasets**. `SEB_DATA_ROOT` is the dataset root, not the processed CSV folder or the state folder.
+`SEB_DATA_ROOT` is the folder containing all three data folders below. Explicit paths take precedence. Default discovery is relative to the package; it works even if you launch the script by absolute path from another directory. Explicit relative environment paths are resolved from the terminal's working directory.
 
-### Use the dashboard
+Check the printed **Data root**, **Datasets found**, source folder, and annotation file. The included demo should show **3 datasets**.
 
-1. Select a recording from **File List** and inspect the raw channels and sensor/CGM plots.
-2. Use the labeling controls to mark peaks and their preceding/following troughs. In the example, labels and matched pairs are already provided.
-3. Click **Refresh Aggregates**, select corresponding SEG and CGM peaks, and click **Save Glu-CGM Pair**. Where relevant, use **Attach SEL to Triplet** to associate a lactate response.
-4. Click **Open Analysis Results**. Load current annotations, select feature columns, and use the analysis and export controls. This page is served at **http://127.0.0.1:8768/analysis** by the same server.
+## Three-folder data layout
 
-Annotations are stored under the selected data root at `analysis/SEB_CGM_alignment/state/alignment_annotations.json`. Dashboard edits change that file, including when working with the synthetic example. Copy a dataset to a separate directory before experimenting if you want to preserve its original annotations.
-
-## Use your own data
-
-### 1. Create a dataset directory
-
-Keep your dataset separate from the scripts. Use the following layout; `my_dataset/` is the directory to pass as `SEB_DATA_ROOT`:
+Each dataset uses exactly three top-level folders:
 
 ```text
-my_dataset/
-├── Organized Data/
-│   └── P001/Day01/P001_Day01_SEB.csv
-├── cleaned_cgm_files/
-│   └── P001_cleaned.csv
-└── analysis/SEB_CGM_alignment/
-    ├── processed_delta_files/
-    │   └── Organized Data/P001/Day01/
-    │       ├── P001_Day01_SEB.csv
-    │       └── P001_Day01_SEB.csv.metadata.json
-    └── state/
-        └── alignment_annotations.json   # created by the dashboard if absent
+synthetic_demo/                 # Or your own dataset root
+├── raw_data/
+│   ├── sensor/
+│   │   └── P901/Day01/P901_Day01_20300101_SEB.csv
+│   └── cgm/
+│       └── P901_cleaned.csv
+├── annotated_data/
+│   ├── series/
+│   │   └── P901/Day01/
+│   │       ├── P901_Day01_20300101_SEB.csv
+│   │       └── P901_Day01_20300101_SEB.csv.metadata.json
+│   ├── annotations_input.json       # Demo labels before feature engineering
+│   └── alignment_annotations.json   # Active dashboard labels and peak features
+└── analysis/
+    ├── manifest.json
+    ├── feature_engineering_summary.json
+    ├── converted_time_series/       # Created when conversion exports are requested
+    └── smoothed_series/             # Created when smoothing output is written
 ```
 
-The file list discovers CSVs under `analysis/SEB_CGM_alignment/processed_delta_files/`. Putting raw CSVs only in `Organized Data/` does not make them appear in that list. Preserve the `Organized Data/<participant>/<day>/...` suffix between raw and processed paths so the dashboard can find the original recording.
+- **raw_data:** source sensor and CGM measurements.
+- **annotated_data:** dashboard-ready processed time series, their source metadata, and saved annotations. Active annotations can include derived peak features so the dashboard can consume one JSON file.
+- **analysis:** summaries, exported results, and runtime files such as the server lock.
 
-Use participant folders such as `P001` or `H001`. The CGM loader normalizes IDs to a P/H prefix and at least three digits: `P1` resolves to `P001_cleaned.csv`. Keep identifiers consistent across files and JSON. Use relative paths with forward slashes inside annotations and metadata.
+The dashboard discovers only CSVs under `annotated_data/series/`. Preserve the participant/day/filename suffix between `raw_data/sensor/` and `annotated_data/series/`. JSON references are relative to the dataset root, use forward slashes, and point to the current file locations. No `Organized Data`, `cleaned_cgm_files`, or `analysis/SEB_CGM_alignment` nesting is needed.
 
-### 2. Prepare sensor and CGM CSVs
+Scripts remain in `dashboard/`, the figure in `assets/`, and dependencies in the package's `requirements.txt`. The package-level `analysis/` files from the earlier reorganization are not the bundled demo's active state; default demo operation reads `synthetic_demo/annotated_data/alignment_annotations.json`.
 
-Raw sensor CSVs require these columns, with numeric channel values:
+## Use the dashboard
+
+1. Select a recording from **File List** and inspect the raw channels and sensor/CGM plots.
+2. Mark peaks and their preceding/following troughs using the labeling controls. The demo already has labels and matched pairs.
+3. Click **Refresh Aggregates**, select corresponding SEG and CGM peaks, and click **Save Glu-CGM Pair**. Use **Attach SEL to Triplet** when associating a lactate response.
+4. Click **Open Analysis Results**, load current annotations, choose feature columns, and use the analysis/export controls. This dashboard runs at **http://127.0.0.1:8768/analysis** in the same server.
+
+Changes save to `annotated_data/alignment_annotations.json` under the selected dataset root. Copy the dataset before experimenting if you want to preserve its initial annotations. Both dashboards use the same active file. Without an annotation file, startup creates an empty one; raw CSVs alone do not supply paired peak features.
+
+## Add your own data
+
+### 1. Prepare raw CSVs
+
+Place sensor recordings in `my_dataset/raw_data/sensor/P001/Day01/`, for example `P001_Day01_SEB.csv`. Required headers and sample rows:
 
 ```csv
 Timestamp,Channel1,Channel2,Channel3
@@ -73,9 +87,9 @@ Timestamp,Channel1,Channel2,Channel3
 2030-01-01 08:01:00,0.111,0.152,0.145
 ```
 
-Use chronologically ordered timestamps such as `YYYY-MM-DD HH:MM:SS` (fractional seconds are also supported). Use the same time basis for sensor, CGM, and annotations; the loader does not perform timezone conversion. Keep channels in the units expected by your sensor calibration.
+Use numeric channel values and chronologically ordered `YYYY-MM-DD HH:MM:SS` timestamps; fractional seconds are supported. Use the same time basis throughout; the loader does not convert timezones. Channel values must match the units expected by your sensor calibration.
 
-Independent CGM files use a different header:
+Put independent CGM readings in `my_dataset/raw_data/cgm/P001_cleaned.csv`:
 
 ```csv
 timestamp,glucose_mmol_L
@@ -83,78 +97,64 @@ timestamp,glucose_mmol_L
 2030-01-01 08:05:00,5.4
 ```
 
-CGM values must be in **mmol/L**. Convert mg/dL inputs before using this format. Different sampling intervals are allowed. Preprocessing attaches CGM values at matching timestamps (or matching minutes for minute-precision sensor input); unmatched rows remain empty, while the independent CGM series is also available for feature calculations.
+CGM must be in **mmol/L**; convert mg/dL first. Use consistent participant IDs such as `P001` or `H001`. The CGM loader normalizes IDs to at least three digits (`P1` resolves to `P001_cleaned.csv`). Different sampling intervals are supported. Preprocessing matches exact timestamps, or minutes for minute-precision sensor inputs, and leaves unmatched CGM rows empty; feature engineering also loads independent CGM readings.
 
-Processed CSVs retain `Timestamp`, `Channel1`, `Channel2`, and `Channel3`. The bundled preprocessing writer additionally exports:
+### 2. Preprocess recordings
 
-```text
-Delta_Channel2_minus_Channel1
-Delta_Channel2_minus_Channel3
-CGM
-Normalized_Delta_Channel2_minus_Channel1
-Normalized_Delta_Channel2_minus_Channel3
-Normalized_CGM
-```
-
-Use the synthetic processed CSVs as format examples. Normalized values are generated by preprocessing; they are not additional raw measurements. An optional `CGM` column in a sensor CSV does not replace the independent CGM input when using the preprocessing helper below.
-
-### 3. Convert raw recordings into dashboard inputs
-
-The dashboard does not automatically preprocess every raw file at startup. After inspecting signal quality, use the shared preprocessing functions to select a segment and generate its processed CSV and metadata. The following example runs from the script folder and processes one recording; edit the dataset location, source path, and selected indices:
+The dashboard does not preprocess all raw files automatically at startup. Inspect signal quality, select a baseline and segment, and generate processed CSVs. Run this example from the package folder after editing the dataset location, source path, and indices:
 
 ```sh
 SEB_DATA_ROOT="/absolute/path/to/my_dataset" python - <<'PY'
 import json
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path('dashboard').resolve()))
 import server
 
-source = 'Organized Data/P001/Day01/P001_Day01_SEB.csv'
+source = 'raw_data/sensor/P001/Day01/P001_Day01_SEB.csv'
 rows = server.load_tool2_series(source)
 if not rows:
-    raise ValueError('No sensor rows were loaded')
-
-# Choose the first index at the intended baseline/asymptote.
-# The end index is inclusive; these defaults select the whole recording.
+    raise ValueError('No sensor rows loaded')
+# Choose the baseline/asymptote as the start; end is inclusive.
 start_index, end_index = 0, len(rows) - 1
 processed = server.tool2_process_rows(rows, source, start_index, end_index)
-relative_output = 'analysis/SEB_CGM_alignment/processed_delta_files/' + source
-server.write_smoothed_rows_csv(relative_output, processed)
-# Despite its name, this writer only writes the supplied rows; it adds no smoothing.
-metadata_path = Path(server.ROOT_DIR) / (relative_output + '.metadata.json')
-metadata_path.write_text(json.dumps({
-    'tool': 'tool2',
-    'source_path': source,
-    'start_index': start_index,
-    'end_index': end_index
+output = 'annotated_data/series/' + source.removeprefix('raw_data/sensor/')
+server.write_smoothed_rows_csv(output, processed)
+# This writer writes the supplied rows; it does not add smoothing itself.
+metadata = Path(server.ROOT_DIR) / (output + '.metadata.json')
+metadata.write_text(json.dumps({
+    'tool': 'tool2', 'source_path': source,
+    'start_index': start_index, 'end_index': end_index
 }, indent=2) + '\n')
-print('Created:', Path(server.ROOT_DIR) / relative_output)
+print('Created:', Path(server.ROOT_DIR) / output)
 PY
 ```
 
-Repeat for each recording. The processing helper subtracts Channel1 and Channel3 from Channel2, adjusts both deltas relative to the selected starting sample, adds the existing `0.04` offset to the glucose delta, matches CGM readings, and generates min–max normalized columns. Smoothing can be applied using the dashboard controls. Review the baseline choice, offset, and hard-coded concentration conversion coefficients before applying the workflow to a different sensor or calibration.
+Repeat per recording. The helper subtracts Channel1 and Channel3 from Channel2, adjusts deltas relative to the starting sample, adds the existing `0.04` glucose-delta offset, attaches CGM, and generates min–max normalized columns. Review the baseline choice, offset, and hard-coded concentration coefficients before using another sensor or calibration. Smoothing is available through the dashboard.
 
-### 4. Launch with your dataset
+Processed CSVs retain the raw channel headers and additionally export `Delta_Channel2_minus_Channel1`, `Delta_Channel2_minus_Channel3`, `CGM`, `Normalized_Delta_Channel2_minus_Channel1`, `Normalized_Delta_Channel2_minus_Channel3`, and `Normalized_CGM`. The demo provides complete examples. An optional CGM column in a raw sensor CSV does not replace the independent CGM file when using this helper.
+
+### 3. Launch and annotate
 
 ```sh
-SEB_DATA_ROOT="/absolute/path/to/my_dataset" python server.py
+SEB_DATA_ROOT="/absolute/path/to/my_dataset" python dashboard/server.py
 ```
 
-Check that the startup data root and dataset count are correct, then open http://127.0.0.1:8768. If you have no saved annotations, the server creates an empty annotation file; label and pair peaks in the dashboard to populate it. Feature engineering uses existing labels and does not automatically infer missing peak/trough annotations.
+Confirm the dataset count and label and pair peaks in the dashboard. Feature engineering uses existing labels; it does not infer missing peak/trough annotations automatically.
 
-To reuse annotations, place a compatible `alignment_annotations.json` in the dataset's `analysis/SEB_CGM_alignment/state/` folder **before** starting the server. Case keys must reference the corresponding processed CSV relative to the dataset root, for example:
+To reuse annotations, put compatible JSON at `annotated_data/alignment_annotations.json` before startup. Case keys and embedded `case_path` values must match processed CSV paths, for example:
 
 ```json
 {
   "meta": {},
   "saved_segments": {
-    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P001/Day01/P001_Day01_SEB.csv": {
-      "labels_glu_cgm": [],
-      "labels_glu_lac": []
+    "annotated_data/series/P001/Day01/P001_Day01_SEB.csv": {
+      "labels_glu_cgm": [], "labels_glu_lac": []
     }
   },
   "peak_pair_features": {
     "cases": {
-      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P001/Day01/P001_Day01_SEB.csv": {
+      "annotated_data/series/P001/Day01/P001_Day01_SEB.csv": {
         "paired_features": []
       }
     }
@@ -162,58 +162,47 @@ To reuse annotations, place a compatible `alignment_annotations.json` in the dat
 }
 ```
 
-This is an empty structural example, not a populated feature record. See `synthetic_demo/annotations_input.json` for complete labels, aggregates, paired records, and `selected_peak_metadata`. Preserve the recording's row order and timestamp alignment when reusing labels because annotations can reference row indices.
+This is an empty structural example. See `synthetic_demo/annotated_data/annotations_input.json` for full labels, aggregates, and `selected_peak_metadata`. Preserve recording row order and timestamps when reusing annotations because labels may reference row indices.
 
-### 5. Recompute features without the dashboard
-
-With the virtual environment active, run:
+### 4. Export recalculated features
 
 ```sh
-SEB_DATA_ROOT="/absolute/path/to/my_dataset" python cgm_feature_engineering.py \
-  /absolute/path/to/my_dataset/analysis/SEB_CGM_alignment/state/alignment_annotations.json \
-  /absolute/path/to/my_dataset/annotations_feature_engineered.json
+SEB_DATA_ROOT="/absolute/path/to/my_dataset" python dashboard/cgm_feature_engineering.py \
+  /absolute/path/to/my_dataset/annotated_data/alignment_annotations.json \
+  /absolute/path/to/my_dataset/analysis/annotations_feature_engineered.json
 ```
 
-This writes a separate enriched JSON and prints a processing summary. Inspect `case_errors` and `peak_metadata_updated`; an empty annotation file produces no peak features. The result can be loaded in Analysis Results. It does not replace the dashboard's active state unless you explicitly place it at the active annotation path while the server is stopped.
+This creates a separate enriched JSON and prints a summary. Check `case_errors` and `peak_metadata_updated`. Load the output in Analysis Results; it does not overwrite active annotations. To make it the active state, explicitly replace the active file while the server is stopped.
 
-## Synthetic example and reproducibility
+## Synthetic data and regeneration
 
-The included example contains fictional participants P901–P903, dated January 1–3, 2030: six hours of one-minute sensor readings and five-minute CGM readings per participant, with two artificial response peaks. No real participant records were used. These Gaussian responses illustrate software behavior and are not a validated physiological model. Lab workbooks and meal photos are not included; meal-dependent metadata remains unset.
+The bundled dataset contains three fictional participants (P901–P903), six hours of one-minute sensor readings and five-minute CGM readings each, with two artificial response peaks. Dates are January 1–3, 2030. No study records were used. Signals illustrate software behavior, not a validated physiological model; lab and meal data are omitted.
 
-| File or folder under `synthetic_demo/` | Purpose |
-| --- | --- |
-| `Organized Data/`, `cleaned_cgm_files/` | Raw sensor and independent CGM inputs |
-| `analysis/SEB_CGM_alignment/processed_delta_files/` | Processed CSVs and metadata JSON |
-| `annotations_input.json` | Labels and paired metadata before feature engineering |
-| `analysis/SEB_CGM_alignment/state/alignment_annotations.json` | Enriched annotations used by the dashboard |
-| `feature_engineering_summary.json` | Processing counts and case errors |
-| `manifest.json` | Generation settings, pipeline, and limitations |
-
-To generate another example, choose a new output directory (the generator refuses to overwrite an existing directory):
+Generate a fresh example into a new directory:
 
 ```sh
-python generate_synthetic_data.py --output synthetic_demo_new --seed 20261023
-SEB_DATA_ROOT="$PWD/synthetic_demo_new" python server.py
+python dashboard/generate_synthetic_data.py --output synthetic_demo_new --seed 20261023
+SEB_DATA_ROOT="$PWD/synthetic_demo_new" python dashboard/server.py
 ```
 
-Signal generation is reproducible for a given seed; provenance timestamps reflect execution time. The included run processed 3 cases, 12 paired records, and 24 signal metadata records without errors. Page generation and the files, current-analysis, series, and peak-feature request handlers were checked against the example; a full browser interaction test has not been performed.
+The generator refuses to overwrite existing directories. Signals are reproducible for a given seed; provenance timestamps reflect execution time. Outputs follow the same three-folder layout. A newly generated example has 3 cases, 12 paired records, and 24 signal metadata records. Existing dashboard edits in the bundled dataset were preserved during migration. Both migrated and newly generated data passed checks for raw/CGM mappings, dashboard request handlers, feature recalculation, startup backfill, and conversion export. A full browser interaction test has not been performed.
 
 ## Troubleshooting
 
-- **No recordings appear:** check the printed data root and dataset count. Confirm the processed CSV directory matches the layout above. An explicitly set `SEB_DATA_ROOT` takes precedence over the demo. A local processed-data directory, even if empty, prevents automatic demo selection; select the demo explicitly if needed.
-- **Files appear but CGM is absent:** check participant naming, the `timestamp,glucose_mmol_L` header, overlapping dates, units, and timestamp alignment.
-- **Analysis Results has no features:** load current annotations and confirm labeled peaks have been paired and saved. Raw CSVs alone do not provide paired-feature records.
-- **Changes to a path seem ineffective:** stop the server, launch again with the intended data root, and refresh the browser.
+- **No files:** check `SEB_DATA_ROOT` and the printed dataset count. Processed CSVs must be under `annotated_data/series/`, not just `raw_data/`. An explicitly configured root takes precedence; even an empty package-level `annotated_data/series/` prevents automatic demo selection.
+- **Missing CGM:** check participant IDs, headers, units, overlapping dates, and timestamp alignment.
+- **No analysis features:** load current annotations and verify peaks have been labeled, paired, and saved.
+- **Old paths after moving files:** update case keys, embedded case paths/instance IDs, and metadata `source_path`, then restart the server. The bundled demo has already been migrated; external datasets are not automatically rewritten.
 
-## Source files and dependencies
+## Source files
 
-| File | Purpose |
+| File under `dashboard/` | Purpose |
 | --- | --- |
-| `server.py` | Main dashboard, shared loaders, preprocessing, and analysis routes |
+| `server.py` | Main dashboard, preprocessing, loaders, and analysis routes |
+| `data_paths.py` | Shared three-folder dataset path resolution |
 | `cgm_feature_engineering.py` | Peak durations, point values, AUC, derivatives, and concentration features |
-| `server_instance.py` | Server startup locking and instance replacement |
 | `analysis_results_dashboard.py` | Analysis Results interface and embedding helpers |
-| `generate_synthetic_data.py` | Reproducible artificial input and annotation generation |
-| `requirements.txt` | NumPy and scikit-learn for optional analysis functionality |
+| `server_instance.py` | Server locking and instance replacement |
+| `generate_synthetic_data.py` | Reproducible data and annotation generation |
 
-The core processing code uses Python's standard library. Requirements are unpinned and are not a validated environment lock. The original standalone screening server has been merged into `server.py`; no separate `toolkit_server.py` is required.
+Core processing uses Python's standard library. `requirements.txt` adds NumPy and scikit-learn for optional analysis functionality; versions are unpinned. The original shared toolkit functions are merged into the main server.

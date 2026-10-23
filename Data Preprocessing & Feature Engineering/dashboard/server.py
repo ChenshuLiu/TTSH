@@ -16,26 +16,16 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from statistics import median
 from urllib.parse import parse_qs, urlparse
 
-# Override for an isolated dataset; retain the historical nested-layout default.
-_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-_DEFAULT_ROOT = os.path.join(_SCRIPT_DIR, "..", "..") if os.path.basename(_SCRIPT_DIR) == "SEB_CGM_alignment" else _SCRIPT_DIR
-_BUNDLED_DEMO_ROOT = os.path.join(_SCRIPT_DIR, "synthetic_demo")
-_PROCESSED_SUBDIR = os.path.join("analysis", "SEB_CGM_alignment", "processed_delta_files")
-if (not os.path.isdir(os.path.join(_DEFAULT_ROOT, _PROCESSED_SUBDIR))
-        and os.path.isdir(os.path.join(_BUNDLED_DEMO_ROOT, _PROCESSED_SUBDIR))):
-    _DEFAULT_ROOT = _BUNDLED_DEMO_ROOT
-ROOT_DIR = os.path.abspath(os.path.expanduser(os.environ.get("SEB_DATA_ROOT") or _DEFAULT_ROOT))
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
+from data_paths import ROOT_DIR as DATA_ROOT, ALIGNMENT_DIR as DATA_ALIGNMENT_DIR, STATE_DIR as DATA_STATE_DIR
+
+ROOT_DIR = str(DATA_ROOT)
 
 # Shared data loaders and processing helpers merged from toolkit_server.py.
-DATA_DIR = os.path.join(ROOT_DIR, 'Organized Data')
+DATA_DIR = os.path.join(ROOT_DIR, 'raw_data', 'sensor')
 
-CGM_DIR = os.path.join(ROOT_DIR, 'cleaned_cgm_files')
+CGM_DIR = os.path.join(ROOT_DIR, 'raw_data', 'cgm')
 
-TOOLKIT_DIR = os.path.join(ROOT_DIR, 'screening_data_quality')
-
-TOOL2_OUTPUT_DIR = os.path.join(TOOLKIT_DIR, 'processed_delta_files')
+TOOL2_OUTPUT_DIR = os.path.join(ROOT_DIR, 'annotated_data', 'series')
 
 def normalize_header(name):
     return ''.join((name or '').strip().lower().split())
@@ -259,7 +249,7 @@ def read_xlsx_dict_rows(abs_path):
 def raw_dict_rows_from_file(rel_path):
     rel_path = safe_rel_path(rel_path)
     abs_path = abs_from_rel(rel_path)
-    field_root = DATA_DIR if rel_path.startswith('Organized Data/') else ROOT_DIR
+    field_root = DATA_DIR if rel_path.startswith('raw_data/sensor/') else ROOT_DIR
     assert_under(abs_path, field_root, 'Path is outside the expected root.')
     if rel_path.lower().endswith('.xlsx'):
         return read_xlsx_dict_rows(abs_path)
@@ -402,12 +392,12 @@ except Exception:
     fallback_tsne_embedding = None
     analysis_results_page_html = None
 
-ALIGNMENT_DIR = os.path.join(ROOT_DIR, "analysis", "SEB_CGM_alignment")
-RAW_ORIGINAL_DIR = os.path.join(ALIGNMENT_DIR, "raw_original_data")
-SMOOTHED_DIR = os.path.join(ALIGNMENT_DIR, "smoothed_processed_delta_files")
-LOCAL_PROCESSED_DIR = os.path.join(ALIGNMENT_DIR, "processed_delta_files")
+ALIGNMENT_DIR = str(DATA_ALIGNMENT_DIR)
+RAW_ORIGINAL_DIR = DATA_DIR
+SMOOTHED_DIR = os.path.join(ALIGNMENT_DIR, "smoothed_series")
+LOCAL_PROCESSED_DIR = TOOL2_OUTPUT_DIR
 CONVERTED_DIR = os.path.join(ALIGNMENT_DIR, "converted_time_series")
-STATE_DIR = os.path.join(ALIGNMENT_DIR, "state")
+STATE_DIR = str(DATA_STATE_DIR)
 SEGMENT_STATE_JSON = os.path.join(STATE_DIR, "segment_state.json")
 PEAK_PAIR_JSON = os.path.join(STATE_DIR, "peak_pair_features.json")
 ANNOTATION_STATE_JSON = os.path.join(STATE_DIR, "alignment_annotations.json")
@@ -645,7 +635,7 @@ def remap_case_path_to_current(path, known_paths):
     rel = safe_rel_path(path)
     if rel in known_paths:
         return rel
-    marker = "Organized Data/"
+    marker = "annotated_data/series/"
     if marker in rel:
         suffix = rel.split(marker, 1)[1]
         for kp in known_paths:
@@ -2370,12 +2360,9 @@ def augment_peak_metadata_with_point_values(rows, peak_meta, cgm_points=None, ag
 
 def local_processed_abs_path(rel_path):
     rel = safe_rel_path(rel_path)
-    marker = "analysis/SEB_CGM_alignment/"
-    if rel.startswith(marker):
-        return os.path.join(ROOT_DIR, rel)
-    if rel.startswith("processed_delta_files/"):
-        return os.path.join(ALIGNMENT_DIR, rel)
-    return os.path.join(ALIGNMENT_DIR, rel)
+    if not rel.startswith("annotated_data/series/"):
+        rel = "annotated_data/series/" + rel
+    return abs_from_rel(rel)
 
 
 def load_rows_for_point_value_backfill(rel_path):
@@ -2937,7 +2924,7 @@ def export_converted_time_series(rel_path, source="seg", smoothing_ratio=0.08):
     path = safe_rel_path(rel_path)
     rows, label, ratio = converted_rows_for_export(path, source=source, smoothing_ratio=smoothing_ratio)
     suffix = path
-    marker = "processed_delta_files/"
+    marker = "annotated_data/series/"
     if marker in suffix:
         suffix = suffix.split(marker, 1)[1]
     stem, _ext = os.path.splitext(suffix)
@@ -2979,7 +2966,7 @@ def cgm_day_ranges_from_original(rel_path, max_days=3):
     pid = None
     for part in parts:
         if re.match(r"^P\d{1,3}$", part, re.IGNORECASE):
-            pid = f"P{int(part[1:]):02d}"
+            pid = f"P{int(part[1:]):03d}"
             break
     if not pid:
         return []
@@ -3054,7 +3041,7 @@ def raw_original_time_window(rel_path):
     fname = None
     for i, part in enumerate(parts):
         if re.match(r"^P\d{1,3}$", part, re.IGNORECASE):
-            pid = f"P{int(part[1:]):02d}"
+            pid = f"P{int(part[1:]):03d}"
         if re.match(r"^Day\d{1,2}$", part, re.IGNORECASE):
             day = part
             if i + 1 < len(parts):
@@ -3081,14 +3068,11 @@ def raw_original_time_window(rel_path):
 
 
 def organized_day_dir_from_rel_path(rel_path):
-    parts = safe_rel_path(rel_path).split("/")
-    if "Organized Data" not in parts:
+    source = cgm_features.source_rel_from_processed_path(rel_path)
+    parts = safe_rel_path(source).split("/")
+    if parts[:2] != ["raw_data", "sensor"] or len(parts) < 5:
         return None
-    idx = parts.index("Organized Data")
-    if len(parts) < idx + 4:
-        return None
-    day_parts = parts[idx : idx + 3]
-    return os.path.join(ROOT_DIR, *day_parts)
+    return os.path.join(ROOT_DIR, *parts[:4])
 
 
 def load_diet_markers(rel_path):
@@ -3185,7 +3169,7 @@ def page_html():
         <h3>Annotation Storage</h3>
         <div class="card">
           <div class="small">Project snapshot/version-control workflow is disabled to avoid accidental overwrite.</div>
-          <div class="small">All annotations now auto-save into <code>state/alignment_annotations.json</code>.</div>
+          <div class="small">All annotations now auto-save into <code>annotated_data/alignment_annotations.json</code>.</div>
           <div class="checkline"><button id="open-analysis-results" type="button">Open Analysis Results</button></div>
         </div>
       </section>
@@ -6531,7 +6515,7 @@ class AlignmentHandler(BaseHTTPRequestHandler):
             self._send_json(load_range_label_history(rel_path or None))
             return
         if parsed.path == "/api/projects" or parsed.path == "/api/projects/active_status":
-            self._send_json({"error": "Project version-control endpoints are disabled. Use single-file autosave state/alignment_annotations.json."}, status=410)
+            self._send_json({"error": "Project version-control endpoints are disabled. Use single-file autosave annotated_data/alignment_annotations.json."}, status=410)
             return
         if parsed.path == "/api/series":
             rel_path = parse_qs(parsed.query).get("path", [""])[0]
@@ -6668,7 +6652,7 @@ class AlignmentHandler(BaseHTTPRequestHandler):
                 self._send_json({"ok": True, "saved_segments": state})
                 return
             if parsed.path.startswith("/api/projects"):
-                raise ValueError("Project version-control endpoints are disabled. Use single-file autosave state/alignment_annotations.json.")
+                raise ValueError("Project version-control endpoints are disabled. Use single-file autosave annotated_data/alignment_annotations.json.")
             if parsed.path == "/api/converted/export":
                 path = safe_rel_path(payload.get("path", ""))
                 source = payload.get("source", "seg")
@@ -7286,9 +7270,10 @@ class AlignmentHandler(BaseHTTPRequestHandler):
 
 def main():
     ensure_dir(STATE_DIR)
+    ensure_dir(ALIGNMENT_DIR)
     # Keep the startup lock through metadata initialization to serialize repeated launches.
     with replacing_server(ThreadingHTTPServer, (HOST, PORT), AlignmentHandler,
-                          __file__, os.path.join(STATE_DIR, 'alignment_server.lock')) as server:
+                          __file__, os.path.join(ALIGNMENT_DIR, 'alignment_server.lock')) as server:
         server.daemon_threads = False
         ensure_unified_annotation_state()
         updated_metadata_features = backfill_peak_pair_metadata_features()

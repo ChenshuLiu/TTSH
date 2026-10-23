@@ -48,9 +48,9 @@ import sys
 import argparse
 from datetime import datetime
 
-ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+if SCRIPT_DIR not in sys.path:
+    sys.path.insert(0, SCRIPT_DIR)
 
 # Resolve loaders lazily to avoid circular imports with the dashboard server.
 
@@ -150,9 +150,9 @@ def calculated_feature_manifest():
 
 def source_rel_from_processed_path(rel_path):
     rel = safe_rel_path(rel_path)
-    marker = "processed_delta_files/"
+    marker = "annotated_data/series/"
     if marker in rel:
-        return rel.split(marker, 1)[1]
+        return "raw_data/sensor/" + rel.split(marker, 1)[1]
     return rel
 
 

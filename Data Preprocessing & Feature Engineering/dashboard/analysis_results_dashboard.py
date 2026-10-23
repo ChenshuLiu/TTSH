@@ -20,7 +20,7 @@ except Exception:
 
 HOST = "127.0.0.1"
 PORT = 8776
-ANNOTATION_STATE_JSON = Path(__file__).resolve().parent / "state" / "alignment_annotations.json"
+from data_paths import ANNOTATION_STATE_JSON
 
 
 def _hbeta(dist_row, beta):

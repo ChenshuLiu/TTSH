@@ -5,7 +5,7 @@
     "description": "Artificial demonstration only; no study records used."
   },
   "saved_segments": {
-    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv": {
+    "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv": {
       "labels_glu_cgm": [
         {
           "name": "CGM trough",
@@ -295,7 +295,7 @@
         }
       ]
     },
-    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv": {
+    "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv": {
       "labels_glu_cgm": [
         {
           "name": "CGM trough",
@@ -585,7 +585,7 @@
         }
       ]
     },
-    "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv": {
+    "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv": {
       "labels_glu_cgm": [
         {
           "name": "CGM trough",
@@ -878,12 +878,12 @@
   },
   "peak_pair_features": {
     "cases": {
-      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv": {
+      "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv": {
         "paired_features": [
           {
             "name": "CGM_vs_SEG_1",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::CGM_vs_SEG_1",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "instance_id": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv::CGM_vs_SEG_1",
+            "case_path": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv",
             "category": "CGM_vs_SEG",
             "panel": "glu_cgm",
             "selected_peak_metadata": {
@@ -913,8 +913,8 @@
           },
           {
             "name": "SEG_vs_SEL_1",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::SEG_vs_SEL_1",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "instance_id": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv::SEG_vs_SEL_1",
+            "case_path": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv",
             "category": "SEG_vs_SEL",
             "panel": "glu_lac",
             "selected_peak_metadata": {
@@ -944,8 +944,8 @@
           },
           {
             "name": "CGM_vs_SEG_2",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::CGM_vs_SEG_2",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "instance_id": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv::CGM_vs_SEG_2",
+            "case_path": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv",
             "category": "CGM_vs_SEG",
             "panel": "glu_cgm",
             "selected_peak_metadata": {
@@ -975,8 +975,8 @@
           },
           {
             "name": "SEG_vs_SEL_2",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv::SEG_vs_SEL_2",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P901/Day01/P901_Day01_20300101_SEB.csv",
+            "instance_id": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv::SEG_vs_SEL_2",
+            "case_path": "annotated_data/series/P901/Day01/P901_Day01_20300101_SEB.csv",
             "category": "SEG_vs_SEL",
             "panel": "glu_lac",
             "selected_peak_metadata": {
@@ -1006,12 +1006,12 @@
           }
         ]
       },
-      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv": {
+      "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv": {
         "paired_features": [
           {
             "name": "CGM_vs_SEG_1",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::CGM_vs_SEG_1",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "instance_id": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv::CGM_vs_SEG_1",
+            "case_path": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv",
             "category": "CGM_vs_SEG",
             "panel": "glu_cgm",
             "selected_peak_metadata": {
@@ -1041,8 +1041,8 @@
           },
           {
             "name": "SEG_vs_SEL_1",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::SEG_vs_SEL_1",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "instance_id": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv::SEG_vs_SEL_1",
+            "case_path": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv",
             "category": "SEG_vs_SEL",
             "panel": "glu_lac",
             "selected_peak_metadata": {
@@ -1072,8 +1072,8 @@
           },
           {
             "name": "CGM_vs_SEG_2",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::CGM_vs_SEG_2",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "instance_id": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv::CGM_vs_SEG_2",
+            "case_path": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv",
             "category": "CGM_vs_SEG",
             "panel": "glu_cgm",
             "selected_peak_metadata": {
@@ -1103,8 +1103,8 @@
           },
           {
             "name": "SEG_vs_SEL_2",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv::SEG_vs_SEL_2",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P902/Day01/P902_Day01_20300102_SEB.csv",
+            "instance_id": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv::SEG_vs_SEL_2",
+            "case_path": "annotated_data/series/P902/Day01/P902_Day01_20300102_SEB.csv",
             "category": "SEG_vs_SEL",
             "panel": "glu_lac",
             "selected_peak_metadata": {
@@ -1134,12 +1134,12 @@
           }
         ]
       },
-      "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv": {
+      "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv": {
         "paired_features": [
           {
             "name": "CGM_vs_SEG_1",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::CGM_vs_SEG_1",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "instance_id": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv::CGM_vs_SEG_1",
+            "case_path": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv",
             "category": "CGM_vs_SEG",
             "panel": "glu_cgm",
             "selected_peak_metadata": {
@@ -1169,8 +1169,8 @@
           },
           {
             "name": "SEG_vs_SEL_1",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::SEG_vs_SEL_1",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "instance_id": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv::SEG_vs_SEL_1",
+            "case_path": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv",
             "category": "SEG_vs_SEL",
             "panel": "glu_lac",
             "selected_peak_metadata": {
@@ -1200,8 +1200,8 @@
           },
           {
             "name": "CGM_vs_SEG_2",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::CGM_vs_SEG_2",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "instance_id": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv::CGM_vs_SEG_2",
+            "case_path": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv",
             "category": "CGM_vs_SEG",
             "panel": "glu_cgm",
             "selected_peak_metadata": {
@@ -1231,8 +1231,8 @@
           },
           {
             "name": "SEG_vs_SEL_2",
-            "instance_id": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv::SEG_vs_SEL_2",
-            "case_path": "analysis/SEB_CGM_alignment/processed_delta_files/Organized Data/P903/Day01/P903_Day01_20300103_SEB.csv",
+            "instance_id": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv::SEG_vs_SEL_2",
+            "case_path": "annotated_data/series/P903/Day01/P903_Day01_20300103_SEB.csv",
             "category": "SEG_vs_SEL",
             "panel": "glu_lac",
             "selected_peak_metadata": {
