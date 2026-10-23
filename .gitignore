@@ -1,0 +1,38 @@
+# Python environments and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local OS/editor files
+.DS_Store
+._*
+Thumbs.db
+.vscode/
+.idea/
+
+# Runtime output; preserve source figures and bundled synthetic fixtures
+outputs/
+*.log
+alignment_server.lock
+
+# Local datasets and environment configuration
+local_data/
+private_data/
+.env
+.env.*
+!.env.example
+
+# Local transfer/release archives (may include private data)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Original private export location
+/HbA1c Classification Modeling/cgm data/inhouse data/
+/HbA1c Classification Modeling/cgm data/private/

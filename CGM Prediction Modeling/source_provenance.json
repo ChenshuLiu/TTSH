@@ -1,0 +1,26 @@
+{
+  "concentration_mapping_dashboard.py": {
+    "sha256": "b349322231dc7cb81fc58b0ed3a0717420065b507ec9883e4040a242f317eed9",
+    "role": "Implementation provenance only; no patient data or source data hashes."
+  },
+  "temporal_comparison.py": {
+    "sha256": "c88fdb6179f19db9dafa8c6c181ac41ea54a8ec4f21a7cd411eb6bb1a79e99a8",
+    "role": "Implementation provenance only; no patient data or source data hashes."
+  },
+  "lag_sensor_alignment.py": {
+    "sha256": "7b9db076b3afcb63e5f84e81a6f98ef74847b5ff3446717167182166eb66f3c7",
+    "role": "Implementation provenance only; no patient data or source data hashes."
+  },
+  "subject_sensor_comparison.py": {
+    "sha256": "8c3651ddb12d78c65995df74a1b7616792483c9f7ee9c2de70ecea0a5e50f299",
+    "role": "Implementation provenance only; no patient data or source data hashes."
+  },
+  "generate_figures.py": {
+    "sha256": "5078536435d691c5cca0a0f304464853b9a58e66bc67f22db2f98658f67fe06a",
+    "role": "Implementation provenance only; no patient data or source data hashes."
+  },
+  "generate_p02_clarke_grid.py": {
+    "sha256": "9f2d674e7dfe76dea2ed51032d60a7b0fa7e9799e4da95d4cef95f4998bc463d",
+    "role": "Implementation provenance only; no patient data or source data hashes."
+  }
+}

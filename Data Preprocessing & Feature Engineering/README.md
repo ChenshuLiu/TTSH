@@ -19,7 +19,7 @@ python -m pip install -r requirements.txt
 python dashboard/server.py
 ```
 
-Open **http://127.0.0.1:8768**. Keep the terminal open; press **Ctrl+C** to stop. For subsequent runs, activate `.venv` and run the server again.
+Open the local host link displayed in the terminal. Keep the terminal open; press **Ctrl+C** to stop. For subsequent runs, activate `.venv` and run the server again.
 
 The default launch selects the bundled `synthetic_demo/` unless the package itself has an `annotated_data/series/` directory. To explicitly choose the demo or a different dataset:
 
@@ -71,7 +71,7 @@ Scripts remain in `dashboard/`, the figure in `assets/`, and dependencies in the
 1. Select a recording from **File List** and inspect the raw channels and sensor/CGM plots.
 2. Mark peaks and their preceding/following troughs using the labeling controls. The demo already has labels and matched pairs.
 3. Click **Refresh Aggregates**, select corresponding SEG and CGM peaks, and click **Save Glu-CGM Pair**. Use **Attach SEL to Triplet** when associating a lactate response.
-4. Click **Open Analysis Results**, load current annotations, choose feature columns, and use the analysis/export controls. This dashboard runs at **http://127.0.0.1:8768/analysis** in the same server.
+4. Click **Open Analysis Results**, load current annotations, choose feature columns, and use the analysis/export controls.
 
 Changes save to `annotated_data/alignment_annotations.json` under the selected dataset root. Copy the dataset before experimenting if you want to preserve its initial annotations. Both dashboards use the same active file. Without an annotation file, startup creates an empty one; raw CSVs alone do not supply paired peak features.
 
