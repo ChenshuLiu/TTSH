@@ -1,75 +1,79 @@
-# HbA1c prediction models — CGM only
+# HbA1c classification models — CGM only
 
-包含 **5 种模型代码、5 个随机种子 × 5 种模型共 25 个已训练 checkpoint、加载示例和配置说明**。
+This package contains five model implementations, 25 trained checkpoints (five architectures × seeds 42–46), inference examples, and experiment configurations. Models predict probabilities for three HbA1c categories; they do not regress a continuous HbA1c value. The supplied checkpoints use CGM sequences only, without demographic metadata or manually engineered features.
 
-这批模型只使用 CGM 序列，输出 HbA1c 的三个类别概率，**不是连续 HbA1c 数值回归模型**。Metadata 和人工统计特征均未作为本批模型输入。
+The former in-house export folder has been removed from the working tree and replaced with **entirely synthetic, schema-compatible examples** in [`cgm data/synthetic_inhouse/`](cgm%20data/synthetic_inhouse/README.md). Public datasets and public-data checkpoints are retained. Previously committed private files may still exist in Git history; working-tree replacement does not purge that history.
 
+## Modeling logic
 
-## 1. 文件结构
+![CGM sequence classification architectures: KNN, 1D CNN, TCN, BiGRU, and Transformer](HbA1c%20Modeling%20Architectures.png)
+
+Each model receives a resampled CGM event. KNN predicts through distance-weighted neighbor voting; the neural models encode the sequence, pool its representation, and produce three class probabilities. The figure is schematic; the configuration table below specifies the shipped implementations, including all four TCN dilation blocks.
+
+## Package contents
 
 ```text
-hba1c_prediction_models/
+HbA1c Classification Modeling/
 ├── README.md
+├── HbA1c Modeling Architectures.png
 ├── requirements.txt
-├── predict.py                       # 统一加载与事件/患者推理入口
-├── verify_bundle.py                 # 校验并加载全部 25 个 checkpoint
-├── model_manifest.json              # 每个模型的路径、种子、配置、原始来源与 SHA256
-├── verified_environment.json         # 本次交接实际验证环境
-├── verification_report.json          # 全模型加载/合成输入检查结果
-├── SHA256SUMS                       # 交付文件完整性清单
+├── predict.py                         # Model loading and event/subject inference
+├── verify_bundle.py                   # Verify all 25 checkpoints
+├── model_manifest.json                # Checkpoints, configurations, provenance, hashes
+├── verified_environment.json          # Previously recorded verification environment
+├── verification_report.json           # Previous model verification report
+├── SHA256SUMS                         # File integrity inventory
 ├── configs/
-│   ├── experiment.json              # 本批训练设置
-│   └── segment_config.json          # 本批片段提取与质量控制设置
+│   ├── experiment.json
+│   └── segment_config.json
 ├── examples/
-│   ├── example_events.json          # 纯合成 CGM 输入，非患者数据
-│   └── load_model.py                # Python 调用示例
-├── cgm_bag/
-│   ├── models.py                    # CNN / TCN / BiGRU / Transformer
-│   ├── knn.py                       # KNN 训练、保存、加载与推断
-│   ├── training.py                  # 患者划分、标准化、训练与 checkpoint 加载
-│   ├── metadata.py                  # 原加载器依赖；当前模型未启用此分支
-│   ├── event_features.py            # 原加载器依赖；当前模型未启用此分支
-│   ├── cohorts.py                   # 训练来源与划分审计
-│   ├── ablation.py                  # 原审计模块的配套依赖
-│   └── __init__.py
+│   ├── example_events.json            # Small synthetic inference input
+│   └── load_model.py
+├── scripts/
+│   └── generate_synthetic_inhouse.py
+├── cgm data/
+│   ├── synthetic_inhouse/             # Fictional CSV/JSON export examples
+│   └── ...                            # Existing public datasets and preprocessing tools
+├── cgm_bag/                           # Model, training, normalization, and audit code
 └── checkpoints/
-    ├── knn/seed_42...seed_46/        # 每个目录：model.npz + train_config.json
-    ├── 1d_cnn/seed_42...seed_46/     # 每个目录：model.pt + train_config.json
+    ├── knn/seed_42...seed_46/          # model.npz + train_config.json
+    ├── 1d_cnn/seed_42...seed_46/        # model.pt + train_config.json
     ├── tcn/seed_42...seed_46/
     ├── bigru/seed_42...seed_46/
     └── transformer/seed_42...seed_46/
 ```
 
-## 2. 快速加载和预测
+## Install and predict
 
-建议使用 Python 3.12，在本目录创建独立环境：
+The recorded verification environment uses Python 3.12. From this package folder:
 
-```bash
+```sh
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 
-# 使用已训练的 Transformer seed 42，不会启动训练。
+# Inference only; this does not start training.
 python predict.py --model transformer --seed 42 \
   --input examples/example_events.json --output-dir outputs/demo
 
-# 验证全部 25 个模型。
+# Check all 25 models with synthetic input.
 python verify_bundle.py
 
-# Python API 示例。
+# Python API example.
 python examples/load_model.py
 ```
 
-Windows 可用 `.venv\Scripts\activate` 激活环境。运行入口默认 CPU；模型目录根据脚本位置定位，移动整个文件夹后无需修改原机器路径。跨硬件或依赖版本的浮点结果可能有细微差异。
+On Windows, activate with `.venv\Scripts\activate`. Entry points default to CPU and locate checkpoints relative to the scripts. Keep the package structure together when moving it. Floating-point results may vary slightly across hardware or dependency versions.
 
-模型参数 `--model` 可取 `knn`、`1d_cnn`、`tcn`、`bigru`、`transformer`；`--seed` 可取 `42`、`43`、`44`、`45`、`46`。例如：
+`--model` accepts `knn`, `1d_cnn`, `tcn`, `bigru`, or `transformer`; `--seed` accepts 42–46. For example:
 
-```bash
+```sh
 python predict.py --model knn --seed 46 \
-  --input examples/example_events.json --output-dir outputs/knn_seed46
+  --input "cgm data/synthetic_inhouse/inference_events.json" \
+  --output-dir outputs/synthetic_knn
 ```
 
-Python API：
+Python API:
 
 ```python
 import json
@@ -83,115 +87,112 @@ event_probabilities = tables["events"]
 patient_probabilities = tables["patients"]
 ```
 
-## 3. 输入：CGM 片段
+## Input format and preprocessing
 
-输入 JSON 是事件列表。每个事件含 `subject_id`、`event_id`、`values`：
+Input is a JSON list of events. Every event has `subject_id`, `event_id`, and `values`: exactly 64 chronological CGM values in **mmol/L**. See `examples/example_events.json` for a complete runnable example. Event IDs must be unique within a subject. Inference does not require HbA1c labels, metadata, or manual features.
 
-```text
-[
-  {
-    "subject_id": "SYNTHETIC_A",
-    "event_id": "event_1",
-    "values": [64 个按时间顺序排列的 mmol/L 血糖值]
-  }
-]
-```
+Supply **unstandardized absolute glucose values**. The original pipeline converts mg/dL by dividing by `18.0182`. The inference wrapper applies the scaler stored with the selected checkpoint; do not apply a second z-score or fit a replacement scaler on evaluation data.
 
-上面仅展示结构；可运行的完整 JSON 见 `examples/example_events.json`。同一患者可有多个 event；同一患者内 `event_id` 必须唯一。推理不需要 HbA1c 标签、metadata 或人工特征。
-
-**必须输入未标准化的绝对血糖值，单位 mmol/L。** 如果上游是 mg/dL，原项目换算方式是除以 `18.0182`。推理入口会应用对应 checkpoint 保存的标准化参数；不要提前做 z-score，也不要用私有数据重新拟合均值/标准差。
-
-这 25 个模型使用同一个片段方案：**trough–peak–trough，长度 64**。先按真实时间选择完整片段并完成质量检查，再按时间线性插值：
+All checkpoints use a complete **trough–peak–trough (TPT)** event resampled to 64 points. Select and quality-check the event in real time, then interpolate by timestamp:
 
 ```python
-# t 为所选片段内有效观测的递增时间，单位秒；g 为对应 mmol/L 值。
+import numpy as np
+# t: increasing valid observation times in seconds; g: glucose in mmol/L.
 target = np.linspace(t[0], t[-1], 64)
 values = np.interp(target, t, g).astype(np.float32)
 ```
 
-64 点覆盖每个片段自身的持续时间，不代表固定分钟采样间隔，也不是按原 CSV 行号插值。插值范围取首末有效观测，不向缺失边界外推。公开数据的中值平滑仅用于定位峰谷，模型输入从未平滑的 CGM 观测生成。
+The 64 points span each event's own duration; they are not a fixed sampling interval. Interpolate by elapsed time, not CSV row index, and do not extrapolate beyond the first/last valid observation. Public-data median smoothing was used to locate landmarks; model inputs were generated from unsmoothed CGM measurements.
 
-原提取设置：
+| Extraction setting | Value |
+| --- | --- |
+| Event type / resampled length | Trough–peak–trough / 64 |
+| Minimum valid raw observations | 5 |
+| Duration | 20–360 minutes |
+| Maximum gap between valid observations | 25 minutes |
+| Maximum missing fraction | 0.2 |
+| Glucose range | 1–40 mmol/L |
+| Minimum amplitude | 0.4 mmol/L |
+| Peak prominence | 0.5 mmol/L |
+| Landmark smoothing window | 15 minutes |
+| Minimum peak separation | 30 minutes |
+| Trough search extent on each side | 180 minutes |
 
-| 项目 | 设置 |
-|---|---|
-| 片段类型 | trough–peak–trough |
-| 重采样长度 | 64 |
-| 有效原始采样点 | 至少 5 点 |
-| 片段时长 | 20–360 分钟 |
-| 相邻有效采样最大间隔 | 25 分钟 |
-| 最大缺失比例 | 0.2 |
-| CGM 范围 | 1–40 mmol/L |
-| 最小振幅 | 0.4 mmol/L |
-| 峰 prominence | 0.5 mmol/L |
-| 峰谷定位平滑窗口 | 15 分钟 |
-| 最小峰间距 | 30 分钟 |
-| 左右谷搜索范围 | 180 分钟 |
+For sensor-derived CGM exports, use `predicted_cgm_mmol_L`. Observed `actual_cgm_mmol_L` may be evaluated separately as an oracle comparator. Complete events need at least two valid points on both rising and falling portions, with the peak inside the retained time range. Do not pad a trough-to-peak-only event to impersonate a complete TPT event.
 
-私有 CGM 映射数据需采用 `predicted_cgm_mmol_L`；真实 CGM 的 `actual_cgm_mmol_L` 可作为单独的 oracle 对照输入。完整 TPT 片段的上升段、下降段各需至少 2 个有效点，峰需位于保留采样首末时间之间。只有 `trough1_to_peak` 的片段不能补成完整 TPT 后直接用于这些权重。
+`predict.py` validates format, length, uniqueness, and finite values. A 64-point array alone cannot establish whether the original timing and landmark quality criteria were met; check those upstream.
 
-`predict.py` 校验输入格式、长度、唯一性和有限值；仅凭 64 点数组无法验证原始时间间隔或峰谷边界，因此原始片段筛选应由上游完成。
+## Model architectures and outputs
 
-## 4. 模型结构与类别顺序
+| Model | Shipped configuration |
+| --- | --- |
+| KNN | Standardized 64-point vector; Euclidean distance; 5 neighbors; distance-weighted voting |
+| 1D CNN | Three Conv1d layers, kernels 5/5/3, 32 channels, GroupNorm/GELU; global mean pooling; Linear(32,3) |
+| TCN | 1×1 input projection; four causal residual blocks with dilations 1/2/4/8, two kernel-3 convolutions per block; temporal mean pooling; Linear(32,3) |
+| BiGRU | One bidirectional GRU layer, hidden size 16 per direction; mean over all time steps; dropout; Linear(32,3) |
+| Transformer | Linear(1,32) time-step embedding and sinusoidal position encoding; two encoder layers, four heads, FFN size 64; temporal mean pooling; Linear(32,3) |
 
-| 模型 | 本批 checkpoint 对应结构 |
-|---|---|
-| KNN | 标准化后的 64 点 CGM 向量 → Euclidean 距离 → 5 个近邻、距离加权投票 |
-| 1D CNN | 3 层 Conv1d，kernel 5/5/3、通道 32，GroupNorm/GELU → 全局平均池化 → Linear(32,3) |
-| TCN | 1×1 输入投影 → 4 个残差因果卷积块，dilation 1/2/4/8，每块 2 层 kernel 3 卷积 → 时间均值池化 → Linear(32,3) |
-| BiGRU | 单层双向 GRU，每方向 hidden 16 → 所有时间步输出均值池化 → Dropout → Linear(32,3) |
-| Transformer | 每个 CGM 时间点 Linear(1,32) 嵌入 + 正弦位置编码 → 2 层 Encoder、4 heads、FFN 64 → 时间均值池化 → Linear(32,3) |
+BiGRU uses all-time-step mean pooling rather than only the final hidden state. Transformer tokens represent individual time steps, not patches. KNN is supervised classification, not clustering.
 
-BiGRU 使用时间均值池化，不是只取最后隐状态；Transformer 是逐点 token 嵌入，没有 patch 切片。KNN 是监督分类基线，不是聚类算法。
+Neural checkpoints use the `PatientBagModel` container with `sample_unit="event"`, `K=1`, and `pooling="mean"`. Each event is one input; the underlying tensor shape is `[batch, 1, 64]`. Multiple events per subject are not required. Use `predict.py` to apply the saved scaler correctly.
 
-神经网络沿用 `PatientBagModel` 容器，但这些权重全部使用 `sample_unit="event"`、`K=1`、`pooling="mean"`，一条事件就是一个模型输入。底层张量为 `[batch, 1, 64]`，不要求每个患者凑齐多个片段。若直接调用底层网络，需自己使用保存的 scaler；推荐使用已经处理好的 `predict.py`。
+Class order and the experiment's HbA1c label definitions are fixed:
 
-输出类别顺序固定：
-
-| 编号 | 名称 | 训练标签定义，HbA1c 单位 % |
-|---|---|---|
+| Index | Label | HbA1c (%) |
+| --- | --- | --- |
 | 0 | Healthy | < 5.7 |
-| 1 | Prediabetes | ≥ 5.7 且 < 6.5 |
+| 1 | Prediabetes | ≥ 5.7 and < 6.5 |
 | 2 | T2D | ≥ 6.5 |
 
-事件表和患者表包含 `p_Healthy`、`p_Prediabetes`、`p_T2D`、预测类别及置信度。事件表每个 event 一行；患者概率为该患者所有输入事件概率的算术均值，再取 argmax 得到类别。患者聚合不是多数票。
+Event and subject outputs contain `p_Healthy`, `p_Prediabetes`, `p_T2D`, predicted class, and confidence. Subject probabilities are the arithmetic mean of that subject's event probabilities, followed by argmax; aggregation is not majority voting.
 
-此前外部评估重点报告 Prediabetes 和 T2D；**这不改变模型仍为三分类的事实**。本包保留三类原始概率。若只显示 2×2 confusion matrix，仍需另外记录落入 Healthy 预测列的错误，不能删掉这些错误样本后重新计算准确率，也不应把剩余两类概率重新归一化并称作原模型结果。
+Earlier external evaluation focused on Prediabetes and T2D, but the models still output three classes. A two-class display must account for errors predicted as Healthy; do not discard those cases or renormalize the other probabilities and present them as the original model outputs.
 
-## 5. 五次训练与权重来源
+## Training design and checkpoint provenance
 
-公开训练来源为 Hall2018、CGMacros、BIG IDEAS，共 116 名有标签患者、7,092 个合格片段。训练/验证按照患者划分，公开验证比例约 25%；同一患者的事件不会同时进入两组。
+The recorded public training sources are Hall2018, CGMacros, and BIG IDEAS: 116 labeled subjects and 7,092 eligible events. Training and validation were split by subject, with approximately 25% public validation. Events from one subject do not cross that split.
 
-每个种子使用一次患者划分，同一种子下五种模型共享该划分。更换种子会改变患者划分，以及神经网络的初始化和训练样本顺序。因此这五轮属于重复随机划分实验，**不是五折交叉验证**；KNN 的差异来自训练划分，近邻推断本身没有随机初始化。
+Each seed defines one subject split shared by all five architectures. Across seeds, splits change, along with neural initialization and sample order. These are **five repeated random splits, not five-fold cross-validation**. KNN differences arise from the training split, not random initialization of neighbor inference.
 
-| 训练项 | 本批设置 |
-|---|---|
-| 随机种子 | 42、43、44、45、46 |
-| 神经网络训练上限 | 200 epochs |
-| 早停 | public validation loss，patience 10 |
-| 优化器 | AdamW |
-| 学习率 / weight decay | 0.0001 / 0.0001 |
+| Training option | Setting |
+| --- | --- |
+| Seeds | 42, 43, 44, 45, 46 |
+| Neural training limit | 200 epochs |
+| Early stopping | Public validation loss; patience 10 |
+| Optimizer | AdamW |
+| Learning rate / weight decay | 0.0001 / 0.0001 |
 | Batch size | 16 |
 | Hidden dimension / dropout | 32 / 0.1 |
-| 类别加权 | 启用，按公开训练事件数计算 |
-| 标准化 | 仅公开训练患者拟合的 patient-balanced global z-score |
-| Metadata / 手工特征 | 未使用 |
-| 私有数据微调 | 本批 checkpoint 未进行 |
+| Class weighting | Enabled; based on public training event counts |
+| Scaling | Patient-balanced global z-score fitted on public training subjects only |
+| Metadata / engineered features | Not used |
+| Private-data fine-tuning | Not performed for the supplied checkpoints |
 
-保存的是每次训练中公开验证损失最低时的网络参数，实际 `best_epoch`、训练轮数、训练/验证人数和事件数见 `model_manifest.json`；不要把 200 的训练上限当作所有模型实际执行的轮数。
+Neural weights correspond to the lowest public validation loss. Actual best epochs, run lengths, subject counts, and event counts are in `model_manifest.json`; 200 is a limit, not the number of epochs completed by every model.
 
-神经网络 `.pt` 内保存权重、模型配置、标准化参数、公开训练/验证患者划分及训练历史。加载使用 `torch.load(..., weights_only=True)`，并严格匹配模型结构与患者划分审计。
+Neural `.pt` files include weights, configuration, scaler, public subject splits, and training history. Loading uses `torch.load(..., weights_only=True)` with strict model/split checks. KNN `.npz` files include public training vectors, labels, subject/event identifiers, scaler, and provenance checks. KNN needs its training instances at inference and therefore is **not a data-free weights artifact**. Loading uses `allow_pickle=False` and reconstructs the neighbor estimator from stored instances; it does not select new training data.
 
-KNN `.npz` 内保存公开训练 CGM 向量、类别标签、公开患者/event 标识、标准化参数及来源校验信息。**KNN 文件并非只有数值参数，推断本身需要这些训练实例。** 加载时会从已保存向量重建近邻分类器，不会选择新训练数据或重新开展五轮实验。`.npz` 使用 `allow_pickle=False` 读取。
+## Synthetic replacement for the in-house export
 
-本包不含私有测试数据。原 checkpoint 中的公开训练标识和 KNN 公开训练向量已按原格式保留，不能将本包描述成“完全不含数据的纯权重包”。
+[`cgm data/synthetic_inhouse/README.md`](cgm%20data/synthetic_inhouse/README.md) documents the replacement. It retains the four original CSV schemas, including the 278-column joined table, and provides per-subject JSON. New records use `SYNTHETIC_*` identifiers, invented 2035 timestamps, analytic curves, and fictional metadata. Unused clinical fields, meal fields, and fitted coefficients are null. No individual records or cohort statistics were used to fit the generator.
 
-## 6. 验证、复用与范围
+There are 9 subjects, 27 events, and 999 time-series samples. `inference_events.json` supplies 27 resampled events ready for `predict.py`. Synthetic examples demonstrate schema compatibility and execution; they cannot establish clinical accuracy or validate the original study results. Their illustrative CGM train/validation labels are not an HbA1c subject-level evaluation split.
 
-`verify_bundle.py` 检查 25 个 checkpoint 的数量、种子、配置、SHA256，加载每个模型，对合成 CGM 进行推断，检查三类概率有效、概率和为 1、患者聚合与事件概率一致。交接时的结果保存在 `verification_report.json`。
+Regenerate without accessing private source files:
 
-合成输入检查只用于验证代码和权重可运行，不是性能评估。本包没有重新计算 accuracy、F1 或 AUROC，也不据此宣称某种模型性能更好。
+```sh
+python scripts/generate_synthetic_inhouse.py \
+  --output outputs/synthetic_inhouse_new --seed 20261023
+```
 
-`requirements.txt` 与 `verified_environment.json` 记录此次交接验证使用的 Python 依赖版本；它们不是原实验运行时自动保存的环境锁文件。`model_manifest.json` 中的 `original_path` 仅记录相对来源，加载入口不依赖它。ZIP 解压后保留整个目录结构即可运行。
+The standard-library generator reads only the column-name schema and refuses to overwrite an existing directory. The old private export path is ignored by Git to reduce accidental reintroduction. This does not remove previously tracked files from historical commits; history cleanup is a separate step before publication.
 
-训练核心也已保留：神经网络可使用 `cgm_bag.training.train_model`，KNN 可使用 `cgm_bag.knn.train_knn`。如后续重新训练，应先完成原始数据提取，并加载本包对应的 `train_config.json`；不要直接使用旧训练类的默认 K/bag 设置。仅运行上述推理和验证命令不会训练新模型。
+## Verification and reuse
+
+`verify_bundle.py` checks the 25-model roster, seeds, configurations, checkpoint hashes, strict loaders, valid three-class probabilities, and subject aggregation using synthetic inputs. `verification_report.json` and `verified_environment.json` record the previous handoff verification; they are not a newly executed validation of this documentation/data replacement.
+
+The replacement data were checked for matching CSV schemas, consistent subject/event joins, unique sample timestamps, and 64-point inference arrays. Checkpoint contents are unchanged. Full neural inference was not rerun during replacement because the current Python environment lacks the required modeling dependencies. After installing requirements, run `python verify_bundle.py` and the synthetic prediction command above.
+
+Synthetic checks do not measure accuracy, F1, or AUROC. `requirements.txt` records versions used for the prior verification, not an environment lock captured during original training. Manifest `original_path` fields record provenance; the inference loader does not depend on those paths.
+
+Training code remains available through `cgm_bag.training.train_model` and `cgm_bag.knn.train_knn`. For retraining, prepare raw events and use the corresponding saved `train_config.json` rather than older default bag settings. Running the prediction or verification commands does not train new models.

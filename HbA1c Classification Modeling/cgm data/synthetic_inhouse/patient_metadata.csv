@@ -1,0 +1,10 @@
+subject_id,metadata_available,hba1c_available,patient.age,patient.gender,patient.ethnic,patient.height,patient.weight,patient.bmi,patient.sbp,patient.dbp,patient.smoking,patient.alcohol,patient.physical_activity,patient.t2dm_duration_years,patient.past_mh___1,patient.past_mh___2,patient.past_mh___3,patient.past_mh___4,patient.medication_oral___1,patient.medication_oral___2,patient.oral_others,patient.insulin___1,patient.insulin___2,patient.insulin___3,patient.fg,patient.hba1c,patient.c_peptide,patient.lactate,patient.poct_glucose_day3,patient.poct_glucose_day4,patient.poct_lactate_day3,patient.poct_lactate_day4,patient.data_collection_form_complete,patient.met_dosage,patient.met_freq,patient.ethnic_others,patient.alch_freq
+SYNTHETIC_001,True,True,30,,,165,60,22.039,,,,,,,,,,,,,,,,,,5.2,,,,,,,,,,,
+SYNTHETIC_002,True,True,33,,,166,62,22.5,,,,,,,,,,,,,,,,,,6.1,,,,,,,,,,,
+SYNTHETIC_003,True,True,36,,,167,64,22.948,,,,,,,,,,,,,,,,,,7.4,,,,,,,,,,,
+SYNTHETIC_004,True,True,39,,,168,66,23.384,,,,,,,,,,,,,,,,,,5.2,,,,,,,,,,,
+SYNTHETIC_005,True,True,42,,,169,68,23.809,,,,,,,,,,,,,,,,,,6.1,,,,,,,,,,,
+SYNTHETIC_006,True,True,45,,,170,70,24.221,,,,,,,,,,,,,,,,,,7.4,,,,,,,,,,,
+SYNTHETIC_007,True,True,48,,,171,72,24.623,,,,,,,,,,,,,,,,,,5.2,,,,,,,,,,,
+SYNTHETIC_008,True,True,51,,,172,74,25.014,,,,,,,,,,,,,,,,,,6.1,,,,,,,,,,,
+SYNTHETIC_009,True,True,54,,,173,76,25.393,,,,,,,,,,,,,,,,,,7.4,,,,,,,,,,,

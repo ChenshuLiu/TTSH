@@ -1,0 +1,30 @@
+{
+  "synthetic": true,
+  "seed": 20261023,
+  "contains_real_patient_data": false,
+  "generation": "Analytic curves and fictional metadata; only column names are retained from the original interface.",
+  "counts": {
+    "subjects": 9,
+    "events": 27,
+    "timeseries_points": 999
+  },
+  "table_shapes": {
+    "timeseries_with_features_and_metadata.csv": {
+      "rows": 999,
+      "columns": 278
+    },
+    "predicted_cgm_timeseries.csv": {
+      "rows": 999,
+      "columns": 17
+    },
+    "patient_metadata.csv": {
+      "rows": 9,
+      "columns": 38
+    },
+    "event_features.csv": {
+      "rows": 27,
+      "columns": 230
+    }
+  },
+  "limitations": "Toy class-dependent curves; no privacy-preserving statistical fit, clinical validity, or performance claims. Coefficients and unused clinical/meal fields are null. Split is an illustrative CGM-event split, not an HbA1c evaluation split."
+}

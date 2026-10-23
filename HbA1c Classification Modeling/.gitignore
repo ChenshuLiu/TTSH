@@ -3,3 +3,7 @@ __pycache__/
 .venv/
 .DS_Store
 outputs/
+
+# Private exports must not be reintroduced into the manuscript repository.
+/cgm data/inhouse data/
+/cgm data/private/
